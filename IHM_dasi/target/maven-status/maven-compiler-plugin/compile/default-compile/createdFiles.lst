@@ -1,0 +1,7 @@
+vue\CartomancienSerialisation.class
+modele\Action.class
+modele\AuthentifierUtilisateurAction.class
+modele\TestUtilisateur.class
+vue\ProfilUtilisateurSerialisation.class
+controller\ActionServlet.class
+vue\Serialisation.class
