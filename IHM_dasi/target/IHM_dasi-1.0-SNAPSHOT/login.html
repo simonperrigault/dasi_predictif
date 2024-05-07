@@ -1,71 +1,70 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Connexion</title>
-        <!-- Librairie Javascript: jQuery (v3.4.1) -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    </head>
-    <body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier mes informations personnelles</title>
+    <link rel="stylesheet" href="style/login.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Predict'IF</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Nos médiums</a></li>
+                    <li><a href="#">Témoignages</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <h1>Connexion</h1>
+    <main>
+        <section class="profile">
+            <div class="container">
+                <h2>Mes informations personnelles</h2>
+                <form action="#">
+                    <div class="form-group">
+                        <label for="nom">Nom:</label>
+                        <input type="text" id="nom" name="nom" value="Macron" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom:</label>
+                        <input type="text" id="prenom" name="prenom" value="Emmanuel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="mr.le.president@france.fr" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="motdepasse">Mot de passe:</label>
+                        <input type="password" id="motdepasse" name="motdepasse" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone:</label>
+                        <input type="tel" id="telephone" name="telephone" value="01">
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre:</label>
+                        <select id="genre" name="genre">
+                            <option value="">Ne souhaite pas répondre</option>
+                            <option value="homme">Homme</option>
+                            <option value="femme">Femme</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Enregistrer les modifications</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-        <!-- Paragraphe avec id="notification" pour les messages de notification -->
-        <p id="notification">Veuillez saisir votre identifiant (adresse mail) et votre mot de passe.</p>
-        
-        <!-- Champs et Bouton de Formulaire -->
-        Identifiant: <input type="text" id="champ-login" size="40" />
-        <br/>
-        Mot de passe: <input type="password" id="champ-password" />
-        <br/>
-        <button id="bouton-connexion">Connexion</button>
-        
-        <!-- Lien vers l'accueil -->
-        <p><a href="index.html">Retour à la page d'Accueil</a></p>
-
-        <script>
-            $(document).ready( function () {
-                $('#bouton-connexion').on( 'click', function () { // Fonction appelée lors du clic sur le bouton
-
-                    console.log("clic sur le bouton de connexion"); // LOG dans Console Javascript
-                    $('#notification').html("Connexion..."); // Message pour le paragraphe de notification
-
-                    // Récupération de la valeur des champs du formulaire
-                    var champLogin = $('#champ-login').val();
-                    var champPassword = $('#champ-password').val();
-
-                    // Appel AJAX
-                    $.ajax({
-                        url: './ActionServlet',
-                        method: 'POST',
-                        data: {
-                            todo: 'connecter',
-                            login: champLogin,
-                            password: champPassword
-                        },
-                        dataType: 'json'
-                    })
-                    .done( function (response) { // Fonction appelée en cas d'appel AJAX réussi
-                        console.log('Response',response); // LOG dans Console Javascript
-                        if (response.connexion) {
-                            $('#notification').html("Connexion OK");  // Message pour le paragraphe de notification
-                            // TODO: afficher les informations du client dans la notification
-                            // Exemple: Connexion de Ada Lovelace (ID 1)
-                            $("#notification").html(`Connexion de ${response.utilisateur.prenom} ${response.utilisateur.nom} (ID ${response.utilisateur.id})`);
-                        }
-                        else {
-                            $('#notification').html("Erreur de Connexion"); // Message pour le paragraphe de notification
-                        }
-                    })
-                    .fail( function (error) { // Fonction appelée en cas d'erreur lors de l'appel AJAX
-                        console.log('Error',error); // LOG dans Console Javascript
-                        alert("Erreur lors de l'appel AJAX");
-                    })
-                    .always( function () { // Fonction toujours appelée
-                        
-                    });
-                });
-            });
-        </script>
-    </body>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Predict'IF</p>
+        </div>
+    </footer>
+</body>
 </html>
