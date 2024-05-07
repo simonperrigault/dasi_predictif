@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modele.AuthentifierUtilisateurAction;
 import vue.ProfilUtilisateurSerialisation;
+import dao.JPAutil;
 
 /**
  *
@@ -35,17 +36,29 @@ public class ActionServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        System.out.println("Appel de actionservlet");
-        switch (request.getParameter("todo")) {
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        JPAutil.creerFabriquePersistance();
+    }
+    
+    protected void processRequest(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String todo = req.getParameter("todo");
+        System.out.println("Trace : todo = " + todo);
+        switch (todo) {
             case "connecter": {
-                new AuthentifierUtilisateurAction().execute(request);
-                new ProfilUtilisateurSerialisation().appliquer(request, response);
+                new AuthentifierUtilisateurAction().execute(req);
+                new ProfilUtilisateurSerialisation().appliquer(req, res);
                 break;
             }
 
         }
+    }
+    
+    @Override
+    public void destroy() {
+        JPAutil.fermerFabriquePersistance();
+        super.destroy();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
