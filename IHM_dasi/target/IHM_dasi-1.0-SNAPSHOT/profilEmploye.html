@@ -3,30 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier mes informations personnelles</title>
-    <link rel="stylesheet" href="style/login.css">
+    <title>Mes informations personnelles</title>
+    <link rel="stylesheet" href="style/profilEmploye.css">
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Predict'IF</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Nos médiums</a></li>
-                    <li><a href="#">Témoignages</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="containerTop">
+            <img style="width: 15%;"src="img/mini_log.png" alt="Predict'IF Logo">
+            <h1>Mes informations personnelles</h1>
+            <div class="blocBouton">
+                    <a href="#" class="btn">Statistiques</a>
+                    <a href="#" class="btn">Mon profil</a>
+            </div>
         </div>
     </header>
 
-    <main>
+        <main>
         <section class="profile">
+            
             <div class="container">
-                <h2>Mes informations personnelles</h2>
-                <form action="#">
+                
+                <form action="#" class="info"">
                     <div class="form-group">
                         <label for="nom">Nom:</label>
                         <input type="text" id="nom" name="nom" value="Macron" required>
@@ -55,14 +52,15 @@
                             <option value="femme">Femme</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn">Enregistrer les modifications</button>
+                    
                 </form>
             </div>
+            <button type="submit" class="btnEnregistrer">Enregistrer les modifications</button>
         </section>
     </main>
 
     <footer>
-        <div class="container">
+        <div class="containerFoot">
             <p>&copy; 2024 Predict'IF</p>
         </div>
     </footer>
