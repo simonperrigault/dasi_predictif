@@ -63,15 +63,24 @@
       margin-bottom: 20px;
     }
     
-    a {
-      color: #333;
+    
+    bouton{
       text-decoration: none;
+      color: black;
     }
+
     
-    a:hover {
+    bouton:hover{
       background-color: var(--bouton-color-hover);
+      color: white;
     }
-    
+
+  a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
     .btn {
       background-color: var(--bouton-color);
       color: #fff;
