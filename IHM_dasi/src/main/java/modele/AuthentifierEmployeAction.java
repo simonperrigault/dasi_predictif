@@ -22,7 +22,7 @@ public class AuthentifierEmployeAction extends Action {
 
     @Override
     public void execute(HttpServletRequest req) {
-        Employe employe = this.serviceEmploye.authentifierEmploye(req.getParameter("login"), req.getParameter("mdp"));
+        Employe employe = this.serviceEmploye.authentifierEmploye(req.getParameter("email"), req.getParameter("mdp"));
         req.setAttribute("employe", employe);
     }
     

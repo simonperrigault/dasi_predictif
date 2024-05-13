@@ -22,7 +22,7 @@ public class AuthentifierClientAction extends Action {
 
     @Override
     public void execute(HttpServletRequest req) {
-        Client client = this.serviceClient.authentifierClient(req.getParameter("login"), req.getParameter("mdp"));
+        Client client = this.serviceClient.authentifierClient(req.getParameter("email"), req.getParameter("mdp"));
         req.setAttribute("client", client);
     }
     
