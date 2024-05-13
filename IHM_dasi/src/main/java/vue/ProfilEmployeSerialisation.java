@@ -34,6 +34,7 @@ public class ProfilEmployeSerialisation extends Serialisation {
             jsonEmploye.addProperty("nom", employe.getNom());
             jsonEmploye.addProperty("prenom", employe.getPrenom());
             jsonEmploye.addProperty("mail", employe.getMail());
+            jsonEmploye.addProperty("mdp", employe.getMotDePasse());
             jsonEmploye.addProperty("telephone", employe.getTelephone());
             jsonEmploye.addProperty("genre", employe.getGenre());
             jsonEmploye.addProperty("disponible", employe.getDisponible());

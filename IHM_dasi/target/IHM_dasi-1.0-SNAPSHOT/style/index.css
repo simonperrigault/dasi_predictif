@@ -3,8 +3,9 @@
     --main-color:  rgb(240,241,235);
     --bouton-color:  rgb(127,129,230);
     --bouton-color-hover:  rgb(100, 102, 233);
+    --taille-label : 10vw;
   }
-  
+  /*vh et vw*/
   body {
       font-family: sans-serif;
       margin: 0;
@@ -12,17 +13,74 @@
       background-color: var(--main-color);
     }
     .container {
-        max-width: 80%;
-        margin: 0 auto;
-        margin-top: 1em;
+      max-width: 100%;
+      /*margin: 0 auto;*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      margin-right: var(--taille-label);
+  
+      
+    }
+
+    #nom{
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+    
+    #description{
+        font-size: 0.5em;
+    }
+
+    .container2 {
+        max-width: 100%;
+        /*margin: 0 auto;*/
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        margin-right: 10vh;
-        
+        flex-direction: row; 
       }
+      .container3 {
+        max-width: 100%;
+        /*margin: 0 auto;*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column  ;
+      }
+
+      .avis{
+            display: flex;
+            flex-direction: row;
+            border:solid 2px var(--bouton-color);
+            border-radius: 5px; 
+            margin: 10px;
+            padding: 5px;
+            background-color: white;
+      }
+    
+      bouton{
+        text-decoration: none;
+        color: black;
+      }
+
+      
+      bouton:hover{
+        background-color: var(--bouton-color-hover);
+        color: white;
+      }
+
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
   
+
     .containerTop{
       margin: 0 auto;
       
@@ -35,7 +93,7 @@
     }
     
   
-    h1, h2, h3 {
+    h1, h2 {
       font-weight: bold;
       margin-bottom: 10px;
       margin-top: 10px;
@@ -43,27 +101,21 @@
       font-size: 2.5em;
     }
   
+    h3{
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1.5em;
+    }
     
     p {
       margin-bottom: 20px;
     }
     
-    bouton{
-      text-decoration: none;
-      color: black;
-    }
 
-    
-    bouton:hover{
-      background-color: var(--bouton-color-hover);
-      color: white;
-    }
 
-  a{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
+
 
     
     .btn {
@@ -86,7 +138,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 5vh;
+      margin-top: 2em;
       margin-left: auto;
       margin-right: auto;
       font-size: larger;
@@ -131,23 +183,11 @@
     }
     
     /* Profile section styles */
-
-    .profile {
-        border: 3px solid #000;
-        border-color: var(--bouton-color);
-        margin-top: 2em;
-    }
     
-    .bigSection{
+    .profile{
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        flex-direction: column;
     }
-
-    .blanc{
-        size: 10em;
-    }
-  
     
   
       /* Additional styles for the profile page */
@@ -156,7 +196,7 @@
     .form-group label {
       display: block;
       margin-bottom: 5px;
-      width: 7em;
+      width: var(--taille-label);
       padding: 10px;
       text-align: right;
       
@@ -169,6 +209,24 @@
     
     .input{
       padding-top: 10px;
+    }
+
+    .sousTitre{
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-top: 2em;
+        text-align: center;
+        width: 40%;
+        margin: auto;
+    }
+
+    .miniTxt{
+        font-size: 0.8em;   
+        margin-top: 2em;
+        text-align: center;
+        width: 40%;
+        margin: auto;
+        padding: 10px;
     }
   
     .form-group input
