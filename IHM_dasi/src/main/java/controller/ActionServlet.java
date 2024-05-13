@@ -16,9 +16,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modele.AuthentifierUtilisateurAction;
-import vue.ProfilUtilisateurSerialisation;
+import modele.AuthentifierClientAction;
+import vue.ProfilClientSerialisation;
 import dao.JPAutil;
+import metier.service.ServiceClient;
+import metier.service.ServiceEmploye;
+import modele.AuthentifierEmployeAction;
+import vue.ProfilEmployeSerialisation;
 
 /**
  *
@@ -43,12 +47,19 @@ public class ActionServlet extends HttpServlet {
     }
     
     protected void processRequest(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        ServiceClient servClient = new ServiceClient();
+        ServiceEmploye servEmploye = new ServiceEmploye();
         String todo = req.getParameter("todo");
         System.out.println("Trace : todo = " + todo);
         switch (todo) {
-            case "connecter": {
-                new AuthentifierUtilisateurAction().execute(req);
-                new ProfilUtilisateurSerialisation().appliquer(req, res);
+            case "connecterClient": {
+                new AuthentifierClientAction(servClient, servEmploye).execute(req);
+                new ProfilClientSerialisation().appliquer(req, res);
+                break;
+            }
+            case "connecterEmploye": {
+                new AuthentifierEmployeAction(servClient, servEmploye).execute(req);
+                new ProfilEmployeSerialisation().appliquer(req, res);
                 break;
             }
 

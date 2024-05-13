@@ -10,36 +10,35 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modele.TestUtilisateur;
+import metier.modele.Employe;
 
 /**
  *
  * @author sperrigaul
  */
-public class CartomancienSerialisation extends Serialisation {
+public class ProfilEmployeSerialisation extends Serialisation {
 
     @Override
     public void appliquer(HttpServletRequest req, HttpServletResponse res) {
         Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
-        JsonObject jsonEleve = new JsonObject();
         JsonObject resultat = new JsonObject();
+        JsonObject jsonEmploye = new JsonObject();
         
-        TestUtilisateur medium = (TestUtilisateur)req.getAttribute("utilisateur");
-        if (medium != null) {
-//            resultat.addProperty("connexion", true);
-//            jsonEleve.addProperty("dénomination", medium.getDenomination());
-//            jsonEleve.addProperty("presentation", medium.getPresentation());
-//            jsonEleve.addProperty("genre", medium.getGenre());
-//            jsonEleve.addProperty("nombreChoisi", medium.getNombreChoisi());
-//            jsonEleve.addProperty("cheminPhotoProfil", medium.getCheminPhotoProfil());
+        Employe employe = (Employe)req.getAttribute("employe");
+        if (employe != null) {
+            resultat.addProperty("connexion", true);
+            jsonEmploye.addProperty("id", employe.getId());
+            jsonEmploye.addProperty("nom", employe.getNom());
+            jsonEmploye.addProperty("prenom", employe.getPrenom());
+            jsonEmploye.addProperty("mail", employe.getMail());
+            jsonEmploye.addProperty("telephone", employe.getTelephone());
+            jsonEmploye.addProperty("genre", employe.getGenre());
+            jsonEmploye.addProperty("disponible", employe.getDisponible());
+            jsonEmploye.addProperty("nombreConsultations", employe.getNombreConsult());
 
-            resultat.add("utilisateur", jsonEleve);
+            resultat.add("employe", jsonEmploye);
         }
         else {
             resultat.addProperty("connexion", false);
@@ -52,7 +51,7 @@ public class CartomancienSerialisation extends Serialisation {
             out.println(gson.toJson(resultat));
             out.close();
         } catch (IOException ex) {
-            Logger.getLogger(ProfilUtilisateurSerialisation.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
     }
     
