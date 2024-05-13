@@ -1,3 +1,8 @@
+vue\ProfilEmployeSerialisation.class
+modele\AuthentifierClientAction.class
 modele\Action.class
+modele\AuthentifierEmployeAction.class
+modele\GetInfosClientAction.class
+vue\ProfilClientSerialisation.class
 controller\ActionServlet.class
 vue\Serialisation.class

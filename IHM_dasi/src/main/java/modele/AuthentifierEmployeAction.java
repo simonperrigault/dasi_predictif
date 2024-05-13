@@ -26,7 +26,9 @@ public class AuthentifierEmployeAction extends Action {
         Employe employe = this.serviceEmploye.authentifierEmploye(req.getParameter("email"), req.getParameter("mdp"));
         req.setAttribute("employe", employe);
         HttpSession session = req.getSession(true);
-        session.setAttribute("employeId", employe.getId());
+        if (employe != null) {
+            session.setAttribute("employeId", employe.getId());
+        }
     }
     
 }

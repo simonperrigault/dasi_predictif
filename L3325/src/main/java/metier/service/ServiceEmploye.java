@@ -315,7 +315,7 @@ public class ServiceEmploye {
     
     // FIN STATISTIQUES
     
-    /*
+    
     
     public Employe rechercherEmployebyID(Long id)
     {
@@ -331,7 +331,6 @@ public class ServiceEmploye {
         
     }       
     
-    */
     
      public Employe authentifierEmploye(String mail, String motDePasse) {
         JPAutil.creerContextePersistance(); 

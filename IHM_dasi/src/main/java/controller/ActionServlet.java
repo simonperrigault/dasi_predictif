@@ -21,6 +21,10 @@ import dao.JPAutil;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
 import modele.AuthentifierEmployeAction;
+import modele.GetInfosClientAction;
+import modele.GetInfosEmployeAction;
+import modele.GetTopMediums;
+import vue.ListeProfilsMediumsSerialisation;
 import vue.ProfilEmployeSerialisation;
 
 /**
@@ -53,7 +57,21 @@ public class ActionServlet extends HttpServlet {
                 new ProfilEmployeSerialisation().appliquer(req, res);
                 break;
             }
-
+            case "getInfosClient": {
+                new GetInfosClientAction(servClient, servEmploye).execute(req);
+                new ProfilClientSerialisation().appliquer(req, res);
+                break;
+            }
+            case "getInfosEmploye": {
+                new GetInfosEmployeAction(servClient, servEmploye).execute(req);
+                new ProfilEmployeSerialisation().appliquer(req, res);
+                break;
+            }
+            case "getTopMediums": {
+                new GetTopMediums(servClient, servEmploye).execute(req);
+                new ListeProfilsMediumsSerialisation().appliquer(req, res);
+                break;
+            }
         }
     }
 
