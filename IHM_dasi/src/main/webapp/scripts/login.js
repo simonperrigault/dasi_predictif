@@ -18,6 +18,26 @@ $(document).ready(() => {
         })
                 .done((res) => {
                     console.log(res);
+                    if (res.connexion == false) {
+                        $.ajax({
+                            url: './ActionServlet',
+                            method: 'POST',
+                            data: {
+                                todo: 'connecterEmploye',
+                                email: email,
+                                mdp: mdp
+                            },
+                            dataType: 'json'
+                        })
+                        .done((res) => {
+                            console.log(res);
+                            if (res.connexion == false) {
+                                alert("Erreur de connexion");
+                                return;
+                            }
+                            window.location.href = "profilEmploye.html";
+                        })
+                    }
                     window.location.href = "profilClient.html";
                 })
                 .fail((res) => {
