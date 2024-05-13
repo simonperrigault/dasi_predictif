@@ -5,7 +5,6 @@ package controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
@@ -31,21 +30,13 @@ import vue.ProfilEmployeSerialisation;
 @WebServlet(urlPatterns = {"/ActionServlet"})
 public class ActionServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     public void init() throws ServletException {
         super.init();
         JPAutil.creerFabriquePersistance();
     }
-    
+
+  
     protected void processRequest(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         ServiceClient servClient = new ServiceClient();
         ServiceEmploye servEmploye = new ServiceEmploye();
@@ -65,7 +56,7 @@ public class ActionServlet extends HttpServlet {
 
         }
     }
-    
+
     @Override
     public void destroy() {
         JPAutil.fermerFabriquePersistance();
@@ -112,4 +103,3 @@ public class ActionServlet extends HttpServlet {
     }// </editor-fold>
 
 }
-
