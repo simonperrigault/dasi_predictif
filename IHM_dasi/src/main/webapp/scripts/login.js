@@ -18,10 +18,11 @@ $(document).ready(() => {
         })
                 .done((res) => {
                     console.log(res);
+                    window.location.href = "profilEmploye.html";
                 })
-                        .fail((res) => {
-                            console.error(res);
-                        });
+                .fail((res) => {
+                    console.error(res);
+                });
     });
 
 }
