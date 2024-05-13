@@ -10,35 +10,35 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import modele.TestUtilisateur;
+import metier.modele.Client;
 
 /**
  *
  * @author sperrigaul
  */
-public class ProfilUtilisateurSerialisation extends Serialisation {
+public class ProfilClientSerialisation extends Serialisation {
 
     @Override
     public void appliquer(HttpServletRequest req, HttpServletResponse res) {
         Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
-        JsonObject jsonEleve = new JsonObject();
         JsonObject resultat = new JsonObject();
+        JsonObject jsonClient = new JsonObject();
         
-        TestUtilisateur eleve = (TestUtilisateur)req.getAttribute("utilisateur");
-        if (eleve != null) {
+        Client client = (Client)req.getAttribute("client");
+        if (client != null) {
             resultat.addProperty("connexion", true);
-            jsonEleve.addProperty("id", eleve.getId());
-            jsonEleve.addProperty("nom", eleve.getNom());
-            jsonEleve.addProperty("prenom", eleve.getPrenom());
-            jsonEleve.addProperty("mail", eleve.getMail());
+            jsonClient.addProperty("id", client.getId());
+            jsonClient.addProperty("nom", client.getNom());
+            jsonClient.addProperty("prenom", client.getPrenom());
+            jsonClient.addProperty("mail", client.getMail());
+            jsonClient.addProperty("telephone", client.getNumTel());
+            jsonClient.addProperty("adresse", client.getAdressePostale());
+            jsonClient.addProperty("latitude", client.getLatitude());
+            jsonClient.addProperty("longitude", client.getLongitude());
 
-            resultat.add("utilisateur", jsonEleve);
+            resultat.add("client", jsonClient);
         }
         else {
             resultat.addProperty("connexion", false);
@@ -51,7 +51,7 @@ public class ProfilUtilisateurSerialisation extends Serialisation {
             out.println(gson.toJson(resultat));
             out.close();
         } catch (IOException ex) {
-            Logger.getLogger(ProfilUtilisateurSerialisation.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
     }
     

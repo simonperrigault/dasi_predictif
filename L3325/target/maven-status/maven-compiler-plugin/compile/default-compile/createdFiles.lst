@@ -7,7 +7,6 @@ dao\JPAutil$1.class
 util\AstroNetApi$AstroNetApiIOException.class
 dao\ClientDao.class
 dao\JPAutil.class
-.netbeans_automatic_build
 metier\modele\ProfilAstral.class
 dao\EmployeDao.class
 metier\modele\Cartomancien.class
