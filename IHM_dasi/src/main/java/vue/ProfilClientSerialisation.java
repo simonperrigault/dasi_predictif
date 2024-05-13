@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import metier.modele.Client;
+import metier.modele.ProfilAstral;
 
 /**
  *
@@ -25,6 +26,7 @@ public class ProfilClientSerialisation extends Serialisation {
         Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
         JsonObject resultat = new JsonObject();
         JsonObject jsonClient = new JsonObject();
+        JsonObject jsonProfil = new JsonObject();
         
         Client client = (Client)req.getAttribute("client");
         if (client != null) {
@@ -37,6 +39,13 @@ public class ProfilClientSerialisation extends Serialisation {
             jsonClient.addProperty("adresse", client.getAdressePostale());
             jsonClient.addProperty("latitude", client.getLatitude());
             jsonClient.addProperty("longitude", client.getLongitude());
+            
+            ProfilAstral profil = client.getProfil();
+            jsonProfil.addProperty("couleur", profil.getCouleur());
+            jsonProfil.addProperty("totem", profil.getTotem());
+            jsonProfil.addProperty("signeChinois", profil.getSigneChinois());
+            jsonProfil.addProperty("signeZodiaque", profil.getSigneZodiaque());
+            jsonClient.add("profil", jsonProfil);
 
             resultat.add("client", jsonClient);
         }

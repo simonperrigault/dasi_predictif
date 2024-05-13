@@ -6,6 +6,7 @@
 package modele;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import metier.modele.Client;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
@@ -24,6 +25,8 @@ public class AuthentifierClientAction extends Action {
     public void execute(HttpServletRequest req) {
         Client client = this.serviceClient.authentifierClient(req.getParameter("email"), req.getParameter("mdp"));
         req.setAttribute("client", client);
+        HttpSession session = req.getSession(true);
+        session.setAttribute("clientId", client.getId());
     }
-    
+
 }

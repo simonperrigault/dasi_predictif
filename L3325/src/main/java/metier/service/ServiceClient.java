@@ -49,7 +49,7 @@ public class ServiceClient {
     }
         
         
-        
+       */ 
     
     public Client rechercherClientbyID(Long id)
     {
@@ -65,7 +65,6 @@ public class ServiceClient {
         
         }   
 
-    */
     
     public Medium rechercherMediumbyID(Long id)
     {
