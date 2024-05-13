@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes informations personnelles</title>
+    <link rel="stylesheet" href="style/profilEmploye.css">
+</head>
+<body>
+    <header>
+        <div class="containerTop">
+            <img style="width: 15%;"src="img/mini_log.png" alt="Predict'IF Logo">
+            <h1>Mes informations personnelles</h1>
+            <div class="blocBouton">
+                    <a href="#" class="btn">Statistiques</a>
+                    <a href="#" class="btn">Mon profil</a>
+            </div>
+        </div>
+    </header>
+
+        <main>
+        <section class="profile">
+            
+            <div class="container">
+                
+                <form action="#" class="info"">
+                    <div class="form-group">
+                        <label for="nom">Nom:</label>
+                        <input type="text" id="nom" name="nom" value="Macron" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom:</label>
+                        <input type="text" id="prenom" name="prenom" value="Emmanuel" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" value="mr.le.president@france.fr" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="motdepasse">Mot de passe:</label>
+                        <input type="password" id="motdepasse" name="motdepasse" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone:</label>
+                        <input type="tel" id="telephone" name="telephone" value="01">
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre:</label>
+                        <select id="genre" name="genre">
+                            <option value="">Ne souhaite pas répondre</option>
+                            <option value="homme">Homme</option>
+                            <option value="femme">Femme</option>
+                        </select>
+                    </div>
+                    
+                </form>
+            </div>
+            <button type="submit" class="btnEnregistrer">Enregistrer les modifications</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="containerFoot">
+            <p>&copy; 2024 Predict'IF</p>
+        </div>
+    </footer>
+</body>
+</html>

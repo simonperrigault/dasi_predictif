@@ -1,0 +1,40 @@
+.titre_index {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.txt_index {
+    font-size: 1em;
+    color: #000000;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mini_txt_index {
+    font-size: 0.8em;
+    color: #000000;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.header{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.list_bouton_top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
