@@ -35,10 +35,15 @@ $(document).ready(() => {
                                 alert("Erreur de connexion");
                                 return;
                             }
-                            window.location.href = "profilEmploye.html";
+                            else{
+                                window.location.href = "profilEmploye.html";
+                            }
+                            
                         })
                     }
-                    window.location.href = "profilClient.html";
+                    else {
+                        window.location.href = "profilClient.html";
+                    }
                 })
                 .fail((res) => {
                     console.error(res);
