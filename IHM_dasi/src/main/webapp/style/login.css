@@ -1,0 +1,189 @@
+/* Global styles */
+:root {
+    --main-color:  rgb(240,241,235);
+    --bouton-color:  rgb(127,129,230);
+    --bouton-color-hover:  rgb(100, 102, 233);
+  }
+  
+  body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--main-color);
+    }
+    .container {
+        max-width: 80%;
+        margin: 0 auto;
+        margin-top: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-right: 10vh;
+        
+      }
+  
+    .containerTop{
+      margin: 0 auto;
+      
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      /*margin-top: 2em;*/
+      background-color: var(--main-color);
+    }
+    
+  
+    h1, h2, h3 {
+      font-weight: bold;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 2.5em;
+    }
+  
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      background-color: var(--bouton-color-hover);
+    }
+    
+    .btn {
+      background-color: var(--bouton-color);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+  
+    }
+  
+    .btnEnregistrer {
+      background-color:  var(--bouton-color);
+      display: block;
+      color: #fff;
+      
+      padding: 20px 4%;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 5vh;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: larger;
+    }
+    
+    button:hover {
+      background-color:var(--bouton-color-hover);
+    }
+  
+  
+    
+    /* Header styles */
+    
+    header {
+      background-color:  var(--main-color);
+      
+    }
+    nav{
+      width: 100%;
+    }
+  
+    .blocBouton{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 0;
+    }
+  
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 25px;
+      float: right;
+      position: absolute;
+      right: 0;
+    }
+    
+    nav li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+    
+    /* Profile section styles */
+
+    .profile {
+        border: 3px solid #000;
+        border-color: var(--bouton-color);
+        margin-top: 2em;
+    }
+    
+    .bigSection{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .blanc{
+        size: 10em;
+    }
+  
+    
+  
+      /* Additional styles for the profile page */
+  
+  
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      width: 7em;
+      padding: 10px;
+      text-align: right;
+      
+    }
+    .form-group{
+      display: flex;
+      flex-direction: raw;
+      padding: 10px;
+    }
+    
+    .input{
+      padding-top: 10px;
+    }
+  
+    .form-group input
+   {
+      width: 30em ;
+      padding: 10px;
+      border: 1px solid var(--main-color);
+      border-radius: 5px;
+      border: 1px solid var(--bouton-color);
+    }
+  
+    .form-group select{
+      width: 31.5em;
+      padding: 10px;
+      border: 1px solid var(--main-color);
+      border-radius: 5px;
+      border: 1px solid var(--bouton-color);
+    }
+    
+    /* Footer styles */
+    
+    footer {
+      background-color: var(--main-color);
+      padding: 20px 0;
+      text-align: center;
+    }
+    
