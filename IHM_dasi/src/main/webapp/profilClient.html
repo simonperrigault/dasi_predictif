@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes informations personnelles</title>
-    <link rel="stylesheet" href="style/profilEmploye.css">
+    <link rel="stylesheet" href="style/profilClient.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/profilClient.js"></script>
 </head>
 <body>
     <header>
         <div class="containerTop">
             <img style="width: 15%;"src="img/mini_log.png" alt="Predict'IF Logo">
-            <h1>Mes informations personnelles</h1>
             <div class="blocBouton">
-                    <a href="#" class="btn">Statistiques</a>
-                    <a href="#" class="btn">Mon profil</a>
+                    <a href="statsEmploye.html" class="btn">Statistiques</a>
+                    <a href="#" class="btn">Prendre un rdv</a>
             </div>
         </div>
     </header>
 
         <main>
         <section class="profile">
-            
+            <h1>Mon profil Astral</h1>
+            <div class="container2">
+                <div class="info">
+                    <p><strong>Signe Zodiaque: </strong> <span id = "zodiaque">Vierge</span></p>
+                    <p><strong>Signe Astrologique Chinois: </strong> <span id = "chinois">Loup</span></p>
+                    <p><strong>Couleur Porte Bonheur: </strong> <span id = "couleur">Rouge</span></p>
+                    <p><strong>Animal Totem: </strong><span id = "aniaml">Chien</span> </p>
+                </div>
+            <h1>Mes informations personnelles</h1>
             <div class="container">
                 
                 <form action="#" class="info">
