@@ -2,7 +2,7 @@ $(document).ready(function() {
     // Code à exécuter lors de l'ouverture de la page
     console.log("La page est chargée !");
     $.ajax({
-        url: './ActionServlet?toto=getInfosClient',
+        url: './ActionServlet?todo=getInfosClient',
         method: 'GET',
         dataType: 'json'
     })

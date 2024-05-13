@@ -64,14 +64,24 @@
       margin-bottom: 20px;
     }
     
-    a {
-      color: #333;
-      text-decoration: none;
-    }
     
-    a:hover {
-      background-color: var(--bouton-color-hover);
+    bouton{
+      text-decoration: none;
+      color: black;
     }
+
+    
+    bouton:hover{
+      background-color: var(--bouton-color-hover);
+      color: white;
+    }
+
+  a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
     
     .btn {
       background-color: var(--bouton-color);
@@ -142,6 +152,7 @@
     .profile{
         display: flex;
         flex-direction: column;
+        
     }
     
   

@@ -35,6 +35,7 @@ public class ProfilClientSerialisation extends Serialisation {
             jsonClient.addProperty("nom", client.getNom());
             jsonClient.addProperty("prenom", client.getPrenom());
             jsonClient.addProperty("mail", client.getMail());
+            jsonClient.addProperty("mdp", client.getMotDePasse());
             jsonClient.addProperty("telephone", client.getNumTel());
             jsonClient.addProperty("adresse", client.getAdressePostale());
             jsonClient.addProperty("latitude", client.getLatitude());

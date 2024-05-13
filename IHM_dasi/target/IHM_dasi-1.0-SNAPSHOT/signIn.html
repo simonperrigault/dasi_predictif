@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes informations personnelles</title>
-    <link rel="stylesheet" href="style/profilEmploye.css">
+    <link rel="stylesheet" href="style/signIn.css">
 </head>
 <body>
     <header>
         <div class="containerTop">
             <a class ="imgA" href="index.html"> <img style="width:70%;"src="img/mini_log.png" alt="Predict'IF Logo"></a> 
-            <h1>Mes informations personnelles</h1>
             <div class="blocBouton">
-                <a class="bouton"  href="login.html"> <bouton href="#" class="btn">Statistiques</bouton> </a>
-                <a class="bouton"  href="login.html">  <bouton href="#" class="btn">Mon profil</bouton> </a>
+                <a class="bouton"  href="login.html"> <bouton href="#" class="btn">Se connecter</bouton> </a>
             </div>
         </div>
     </header>
@@ -21,6 +19,8 @@
         <main>
         <section class="profile">
             
+            <p class="sousTitre">Pas encore de compte ?</p>
+            <h1>Inscrivez-vous</h1>
             <div class="container">
                 
                 <form action="#" class="info">
@@ -41,6 +41,10 @@
                         <input type="password" id="motdepasse" name="motdepasse" required>
                     </div>
                     <div class="form-group">
+                        <label for="motdepasse">Confirmation:</label>
+                        <input type="password" id="Confirmation" name="confirmation" required>
+                    </div>
+                    <div class="form-group">
                         <label for="telephone">Téléphone:</label>
                         <input type="tel" id="telephone" name="telephone" placeholder="tel">
                     </div>
@@ -52,10 +56,15 @@
                             <option value="femme">Femme</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="dateNaissance">Date de naissance:</label>
+                        <input type="date" id="dateNaissance" name="dateNaissance" required>
+                    </div>
+                    
                     
                 </form>
             </div>
-            <button type="submit" class="btnEnregistrer">Enregistrer les modifications</button>
+            <button type="submit" class="btnEnregistrer">S'inscrire</button>
         </section>
     </main>
 

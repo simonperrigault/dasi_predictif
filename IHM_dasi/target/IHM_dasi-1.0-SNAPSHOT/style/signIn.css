@@ -3,6 +3,7 @@
     --main-color:  rgb(240,241,235);
     --bouton-color:  rgb(127,129,230);
     --bouton-color-hover:  rgb(100, 102, 233);
+    --taille-label : 15vw;
   }
   
   body {
@@ -12,16 +13,27 @@
       background-color: var(--main-color);
     }
     .container {
-        max-width: 80%;
-        margin: 0 auto;
-        margin-top: 1em;
+      max-width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-right: var(--taille-label);
+      
+  
+    }
+    main{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        text-align: center;
-        margin-right: 10vh;
-        
-      }
+    }
+
+    .profile{
+      border: solid 2px var(--bouton-color);
+      width: 80%;
+      padding: 10px;
+    }
   
     .containerTop{
       margin: 0 auto;
@@ -48,24 +60,25 @@
       margin-bottom: 20px;
     }
     
+      
     bouton{
       text-decoration: none;
       color: black;
     }
-
+  
     
     bouton:hover{
       background-color: var(--bouton-color-hover);
       color: white;
+      text-decoration: none;
     }
-
+  
   a{
       display: flex;
       justify-content: center;
       align-items: center;
   }
-
-    
+  
     .btn {
       background-color: var(--bouton-color);
       color: #fff;
@@ -86,7 +99,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 5vh;
+      margin-top: 2em;
       margin-left: auto;
       margin-right: auto;
       font-size: larger;
@@ -129,38 +142,15 @@
       display: inline-block;
       margin-right: 20px;
     }
-    
-    /* Profile section styles */
-
-    .profile {
-        border: 3px solid #000;
-        border-color: var(--bouton-color);
-        margin-top: 2em;
-    }
-    
-    .bigSection{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .blanc{
-        size: 10em;
-    }
   
-    
-  
-      /* Additional styles for the profile page */
-  
-  
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      width: 7em;
-      padding: 10px;
-      text-align: right;
-      
-    }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        width: var(--taille-label);
+        padding: 10px;
+        text-align: right;
+        
+      }
     .form-group{
       display: flex;
       flex-direction: raw;
@@ -196,3 +186,9 @@
       text-align: center;
     }
     
+    .sousTitre{
+        font-size:0.8em;
+        margin-top: 5px;
+        text-align: center;
+        margin-bottom: 5px;
+    }
