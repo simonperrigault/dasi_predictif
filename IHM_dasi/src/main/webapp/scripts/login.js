@@ -18,7 +18,7 @@ $(document).ready(() => {
         })
                 .done((res) => {
                     console.log(res);
-                    window.location.href = "profilEmploye.html";
+                    window.location.href = "profilClient.html";
                 })
                 .fail((res) => {
                     console.error(res);

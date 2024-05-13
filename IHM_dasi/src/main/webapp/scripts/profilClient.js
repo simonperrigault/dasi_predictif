@@ -11,7 +11,7 @@ $(document).ready(function() {
         $('#nom').val(res.client.nom);
         $('#prenom').val(res.client.prenom);
         $('#motdepasse').val(res.client.mdp);
-        $('#email').val(res.client.email);
+        $('#email').val(res.client.mail);
         //$('#adresse').val(res.client.adresse);
         $('#telephone').val(res.client.telephone);
 
