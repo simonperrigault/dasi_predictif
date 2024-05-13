@@ -8,19 +8,17 @@ $(document).ready(function() {
     })
     .done((res) => {
         console.log(res);
-        $('#nom').val(res.nom);
-        $('#prenom').val(res.prenom);
-        $('#motdepasse').val(res.mdp);
-        $('#email').val(res.email);
-        //$('#adresse').val(res.adresse);
-        $('#telephone').val(res.telephone);
+        $('#nom').val(res.client.nom);
+        $('#prenom').val(res.client.prenom);
+        $('#motdepasse').val(res.client.mdp);
+        $('#email').val(res.client.email);
+        //$('#adresse').val(res.client.adresse);
+        $('#telephone').val(res.client.telephone);
 
-        $('#zodiaque').val(res.signeZodiaque);
-        $('#chinois').val(res.signeChinois);
-        $('#couleur').val(res.couleur);
-        $('#animal').val(res.totem);
-
-        
+        $('#zodiaque').val(res.client.signeZodiaque);
+        $('#chinois').val(res.client.signeChinois);
+        $('#couleur').val(res.client.couleur);
+        $('#animal').val(res.client.totem);
 
     })
 
