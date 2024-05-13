@@ -3,14 +3,9 @@
     --main-color:  rgb(240,241,235);
     --bouton-color:  rgb(127,129,230);
     --bouton-color-hover:  rgb(100, 102, 233);
-<<<<<<< Updated upstream
     --taille-label : 10vw;
   }
   /*vh et vw*/
-=======
-  }
-  
->>>>>>> Stashed changes
   body {
       font-family: sans-serif;
       margin: 0;
@@ -18,7 +13,6 @@
       background-color: var(--main-color);
     }
     .container {
-<<<<<<< Updated upstream
       max-width: 100%;
       /*margin: 0 auto;*/
       display: flex;
@@ -43,16 +37,10 @@
     .container2 {
         max-width: 100%;
         /*margin: 0 auto;*/
-=======
-        max-width: 80%;
-        margin: 0 auto;
-        margin-top: 1em;
->>>>>>> Stashed changes
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-<<<<<<< Updated upstream
         flex-direction: row; 
       }
       .container3 {
@@ -93,12 +81,6 @@
     }
   
 
-=======
-        margin-right: 10vh;
-        
-      }
-  
->>>>>>> Stashed changes
     .containerTop{
       margin: 0 auto;
       
@@ -111,11 +93,7 @@
     }
     
   
-<<<<<<< Updated upstream
     h1, h2 {
-=======
-    h1, h2, h3 {
->>>>>>> Stashed changes
       font-weight: bold;
       margin-bottom: 10px;
       margin-top: 10px;
@@ -123,7 +101,6 @@
       font-size: 2.5em;
     }
   
-<<<<<<< Updated upstream
     h3{
         font-weight: bold;
         margin-bottom: 10px;
@@ -131,28 +108,15 @@
         text-align: center;
         font-size: 1.5em;
     }
-=======
->>>>>>> Stashed changes
     
     p {
       margin-bottom: 20px;
     }
     
-<<<<<<< Updated upstream
 
 
 
 
-=======
-    a {
-      color: #333;
-      text-decoration: none;
-    }
-    
-    a:hover {
-      background-color: var(--bouton-color-hover);
-    }
->>>>>>> Stashed changes
     
     .btn {
       background-color: var(--bouton-color);
@@ -174,11 +138,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-<<<<<<< Updated upstream
       margin-top: 2em;
-=======
-      margin-top: 5vh;
->>>>>>> Stashed changes
       margin-left: auto;
       margin-right: auto;
       font-size: larger;
@@ -223,32 +183,11 @@
     }
     
     /* Profile section styles */
-<<<<<<< Updated upstream
     
     .profile{
         display: flex;
         flex-direction: column;
     }
-=======
-
-    .profile {
-        border: 3px solid #000;
-        border-color: var(--bouton-color);
-        margin-top: 2em;
-    }
-    
-    .bigSection{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        gap: 1vh;
-    }
-
-    .blanc{
-        size: 10em;
-    }
-  
->>>>>>> Stashed changes
     
   
       /* Additional styles for the profile page */
@@ -257,11 +196,7 @@
     .form-group label {
       display: block;
       margin-bottom: 5px;
-<<<<<<< Updated upstream
       width: var(--taille-label);
-=======
-      width: 7em;
->>>>>>> Stashed changes
       padding: 10px;
       text-align: right;
       
@@ -275,7 +210,6 @@
     .input{
       padding-top: 10px;
     }
-<<<<<<< Updated upstream
 
     .sousTitre{
         font-size: 1.5em;
@@ -294,8 +228,6 @@
         margin: auto;
         padding: 10px;
     }
-=======
->>>>>>> Stashed changes
   
     .form-group input
    {
