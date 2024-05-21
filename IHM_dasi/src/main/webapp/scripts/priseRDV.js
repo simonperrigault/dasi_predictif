@@ -24,11 +24,11 @@ $(document).ready(function() {
                     <p class ="titrePopUp">Confirmer la réservation</p>
                     <div class ="popUpContent">
                         <div class="imgPopUp">
-                            <p class = "nomMedium">Mr. M</p>
+                            <p class = "nomMedium">${element.medium.denomination}</p>
                             <img src="${element.medium.image}" alt="Medium">
                         </div>
                         <div class="txtPopUp">
-                            <p  >${element.medium.denomination}</p>
+                            <p  >${element.medium.presentation}</p>
                         </div>
                     </div>
                     <div class = "containsBoutons" >
