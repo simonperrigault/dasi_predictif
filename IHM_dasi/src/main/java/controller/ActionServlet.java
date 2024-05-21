@@ -72,6 +72,11 @@ public class ActionServlet extends HttpServlet {
                 new ListeProfilsMediumsSerialisation().appliquer(req, res);
                 break;
             }
+            case "getAllMedium": {
+                new GetTopMediums(servClient, servEmploye).execute(req);
+                new ListeProfilsMediumsSerialisation().appliquer(req, res);
+                break;
+            }
         }
     }
 

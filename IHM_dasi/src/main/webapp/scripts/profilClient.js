@@ -15,10 +15,10 @@ $(document).ready(function() {
         //$('#adresse').val(res.client.adresse);
         $('#telephone').val(res.client.telephone);
 
-        $('#zodiaque').val(res.client.profil.signeZodiaque);
-        $('#chinois').val(res.client.profil.signeChinois);
-        $('#couleur').val(res.client.profil.couleur);
-        $('#animal').val(res.client.profil.totem);
+        $('#zodiaque').html(res.client.profil.signeZodiaque);
+        $('#chinois').html(res.client.profil.signeChinois);
+        $('#couleur').html(res.client.profil.couleur);
+        $('#animal').html(res.client.profil.totem);
 
     })
 

@@ -48,6 +48,10 @@ public class Medium implements Serializable {
     
     //getters
     
+    public String getCheminPhotoProfil() {
+        return cheminPhotoProfil;
+    }
+
     public int getNombreChoisi() {
         return nombreChoisi;
     }
