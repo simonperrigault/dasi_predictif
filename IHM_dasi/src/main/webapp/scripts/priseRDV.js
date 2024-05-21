@@ -21,19 +21,21 @@ $(document).ready(function() {
                 const mediumId = $(this).data('id');
                 const confirmPopup = `
                 <div class="popup">
-                <div class="imgPopUp">
-                    <p>Mr. M</p>
-                    <img src="${element.medium.image}" alt="Medium">
-                </div>
-                <div class="txtPopUp">
                     <p class ="titrePopUp">Confirmer la réservation</p>
-                    <p>${element.medium.presentation} ?</p>
-                    <div class = "containsBoutons" >
-                        <button class="btn btn-primary" id="confirm-btn">Confirmer</button>
-                        <button class="btn btn-secondary" id="cancel-btn">Annuler</button>
+                    <div class ="popUpContent">
+                        <div class="imgPopUp">
+                            <p>Mr. M</p>
+                            <img src="img/${element.medium.image}" alt="Medium">
+                        </div>
+                        <div class="txtPopUp">
+                            <p> ${element.medium.denomination} ?</p>
+                            <div class = "containsBoutons" >
+                                <button class="btn-primary" id="confirm-btn">Confirmer</button>
+                                <button class="btn-secondary" id="cancel-btn">Annuler</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
                 `;
                 $('body').css('background-color', 'rgb(137, 137, 137)');
 
@@ -42,33 +44,30 @@ $(document).ready(function() {
                 popupContainer.html(confirmPopup);
                 $('body').append(popupContainer);
 
+                // Add event listeners to the buttons
+                popupContainer.find('#confirm-btn').on('click', function() {
+                    $.ajax({
+                        url: './ActionServlet?todo=creerConsultation',
+                        method: 'POST',
+                        data: { mediumId: mediumId },
+                        dataType: 'json'
+                    })
+                    .done((res) => {
+                        console.log(`Appointment booked with medium ${mediumId}!`);
+                    })
+                    .fail((xhr, status, error) => {
+                        console.error(`Error booking appointment: ${error}`);
+                    });
+                    popupContainer.remove();
+                });
 
-               // Create a jQuery UI dialog for the popup
-                    const dialog = $(confirmPopup).dialog({
-                    modal: true,
-                    title: 'Confirmation',
-                    buttons: {
-                        confirm: function() {
-                            $.ajax({
-                                url: './ActionServlet?todo=bookAppointment',
-                                method: 'POST',
-                                data: { mediumId: mediumId },
-                                dataType: 'json'
-                            })
-                            .done((res) => {
-                                console.log(`Appointment booked with medium ${mediumId}!`);
-                            })
-                            .fail((xhr, status, error) => {
-                                console.error(`Error booking appointment: ${error}`);
-                            });
-                            $(this).dialog('close');
-                        },
-                        cancel: function() {
-                            $(this).dialog('close');
-                        }
-                    }
+                popupContainer.find('#cancel-btn').on('click', function() {
+                    popupContainer.remove();
                 });
             });
         }
+    })
+    .fail((xhr, status, error) => {
+        console.error(`Error fetching mediums: ${error}`);
     });
 });
