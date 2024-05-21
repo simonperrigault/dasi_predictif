@@ -42,30 +42,33 @@ $(document).ready(function() {
                 popupContainer.html(confirmPopup);
                 $('body').append(popupContainer);
 
-                // Add event listeners to the buttons
-                popupContainer.find('#confirm-btn').on('click', function() {
-                    $.ajax({
-                        url: './ActionServlet?todo=creerConsultation',
-                        method: 'POST',
-                        data: { mediumId: mediumId },
-                        dataType: 'json'
-                    })
-                    .done((res) => {
-                        console.log(`Appointment booked with medium ${mediumId}!`);
-                    })
-                    .fail((xhr, status, error) => {
-                        console.error(`Error booking appointment: ${error}`);
-                    });
-                    popupContainer.remove();
-                });
 
-                popupContainer.find('#cancel-btn').on('click', function() {
-                    popupContainer.remove();
+               // Create a jQuery UI dialog for the popup
+                    const dialog = $(confirmPopup).dialog({
+                    modal: true,
+                    title: 'Confirmation',
+                    buttons: {
+                        confirm: function() {
+                            $.ajax({
+                                url: './ActionServlet?todo=creerConsultation',
+                                method: 'POST',
+                                data: { mediumId: mediumId },
+                                dataType: 'json'
+                            })
+                            .done((res) => {
+                                console.log(`Appointment booked with medium ${mediumId}!`);
+                            })
+                            .fail((xhr, status, error) => {
+                                console.error(`Error booking appointment: ${error}`);
+                            });
+                            $(this).dialog('close');
+                        },
+                        cancel: function() {
+                            $(this).dialog('close');
+                        }
+                    }
                 });
             });
         }
-    })
-    .fail((xhr, status, error) => {
-        console.error(`Error fetching mediums: ${error}`);
     });
 });
