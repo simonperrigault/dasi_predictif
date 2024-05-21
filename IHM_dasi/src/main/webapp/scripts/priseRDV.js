@@ -23,7 +23,7 @@ $(document).ready(function() {
                 <div class="popup">
                 <div class="imgPopUp">
                     <p>Mr. M</p>
-                    <img src="img/${element.medium.image}" alt="Medium">
+                    <img src="${element.medium.image}" alt="Medium">
                 </div>
                 <div class="txtPopUp">
                     <p class ="titrePopUp">Confirmer la réservation</p>
