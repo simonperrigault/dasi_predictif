@@ -1,7 +1,10 @@
 vue\ProfilEmployeSerialisation.class
+modele\creerConsultationAction.class
+vue\ConsultationSerialisation.class
 modele\GetInfosEmployeAction.class
 modele\GetInfosClientAction.class
 vue\ProfilClientSerialisation.class
+modele\GetAllMediums.class
 modele\AuthentifierClientAction.class
 modele\Action.class
 modele\AuthentifierEmployeAction.class

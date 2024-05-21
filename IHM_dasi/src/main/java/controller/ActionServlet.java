@@ -24,6 +24,8 @@ import modele.AuthentifierEmployeAction;
 import modele.GetInfosClientAction;
 import modele.GetInfosEmployeAction;
 import modele.GetTopMediums;
+import modele.creerConsultationAction;
+import vue.ConsultationSerialisation;
 import vue.ListeProfilsMediumsSerialisation;
 import vue.ProfilEmployeSerialisation;
 
@@ -72,9 +74,14 @@ public class ActionServlet extends HttpServlet {
                 new ListeProfilsMediumsSerialisation().appliquer(req, res);
                 break;
             }
-            case "getAllMedium": {
+            case "getAllMediums": {
                 new GetTopMediums(servClient, servEmploye).execute(req);
                 new ListeProfilsMediumsSerialisation().appliquer(req, res);
+                break;
+            }
+            case "creerConsultation": {
+                new creerConsultationAction(servClient, servEmploye).execute(req);
+                new ConsultationSerialisation().appliquer(req, res);
                 break;
             }
         }

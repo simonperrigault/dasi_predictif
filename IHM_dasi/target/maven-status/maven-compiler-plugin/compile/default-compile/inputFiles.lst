@@ -2,12 +2,15 @@ H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\modele\InscrireClientAction.ja
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\controller\ActionServlet.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\modele\GetInfosClientAction.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\modele\GetInfosEmployeAction.java
+H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\modele\creerConsultationAction.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\modele\Action.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\vue\ProfilClientSerialisation.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\modele\AuthentifierClientAction.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\vue\ListeProfilsMediumsSerialisation.java
+H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\modele\GetAllMediums.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\vue\Serialisation.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\vue\ProfilEmployeSerialisation.java
+H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\vue\ConsultationSerialisation.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\vue\ProfilMediumSerialisation.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\modele\GetTopMediums.java
 H:\3if\DASI\dasi_predictif\IHM_dasi\src\main\java\modele\AuthentifierEmployeAction.java

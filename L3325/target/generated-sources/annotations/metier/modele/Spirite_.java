@@ -4,7 +4,7 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2024-05-21T08:14:28")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2024-05-21T08:53:48")
 @StaticMetamodel(Spirite.class)
 public class Spirite_ extends Medium_ {
 
