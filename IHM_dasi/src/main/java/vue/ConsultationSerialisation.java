@@ -85,6 +85,7 @@ public class ConsultationSerialisation extends Serialisation {
                 jsonClient.addProperty("adresse", client.getAdressePostale());
                 jsonClient.addProperty("latitude", client.getLatitude());
                 jsonClient.addProperty("longitude", client.getLongitude());
+                jsonClient.addProperty("dateNaissance", format.format(client.getDateNaissance()));
 
                 ProfilAstral profil = client.getProfil();
                 jsonProfil.addProperty("couleur", profil.getCouleur());

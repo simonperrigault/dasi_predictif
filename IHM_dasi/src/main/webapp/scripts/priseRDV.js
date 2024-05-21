@@ -53,7 +53,13 @@ $(document).ready(function() {
                         dataType: 'json'
                     })
                     .done((res) => {
-                        console.log(`Appointment booked with medium ${mediumId}!`);
+                        if (res.trouve) {
+                            console.log(`Appointment booked with medium ${mediumId}!`);
+                        }
+                        else {
+                            console.log('Erreur lors de la prise de rendez-vous');
+                        }
+                        console.log(res);
                     })
                     .fail((xhr, status, error) => {
                         console.error(`Error booking appointment: ${error}`);

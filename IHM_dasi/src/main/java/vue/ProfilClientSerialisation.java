@@ -10,6 +10,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import metier.modele.Client;
@@ -40,6 +41,8 @@ public class ProfilClientSerialisation extends Serialisation {
             jsonClient.addProperty("adresse", client.getAdressePostale());
             jsonClient.addProperty("latitude", client.getLatitude());
             jsonClient.addProperty("longitude", client.getLongitude());
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            jsonClient.addProperty("dateNaissance", format.format(client.getDateNaissance()));
             
             ProfilAstral profil = client.getProfil();
             jsonProfil.addProperty("couleur", profil.getCouleur());

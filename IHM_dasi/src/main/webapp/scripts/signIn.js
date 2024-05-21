@@ -12,7 +12,6 @@ $(document).ready(() => {
             email : $('#email').val(),
             mdp : $('#motdepasse').val(),
             tel : $('#telephone').val(),
-            genre : $('#genre').val(),
             adresse: $("#adresse").val(),
             date : $('#dateNaissance').val()
         }

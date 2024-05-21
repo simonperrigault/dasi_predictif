@@ -12,7 +12,7 @@ $(document).ready(function() {
         $('#prenom').val(res.client.prenom);
         $('#motdepasse').val(res.client.mdp);
         $('#email').val(res.client.mail);
-        //$('#adresse').val(res.client.adresse);
+        $('#adresse').val(res.client.adresse);
         $('#telephone').val(res.client.telephone);
 
         $('#zodiaque').html(res.client.profil.signeZodiaque);
