@@ -13,13 +13,8 @@ $(document).ready(function() {
                 break;
             }
             const mediumElement = $(`
-                <div class="medium">
-                    <img class="imgMedium" src="${element.medium.image}" alt="${element.medium.denomination}">
-                    <p>${element.medium.denomination}</p>
-                    <button class="btn btn-primary" data-id="${element.medium.id}">Choisir</button>
-                </div>
-                <div>
-                    <img src="${element.medium.image}" alt="${element.medium.denomination}">
+                <div class = "medium">
+                    <img class = "imgMedium" src="${element.medium.image}" alt="${element.medium.denomination}">
                     <p id="nom1">${element.medium.denomination}</p>
                     <p id="description1">${element.medium.presentation}</p>
                 </div>
