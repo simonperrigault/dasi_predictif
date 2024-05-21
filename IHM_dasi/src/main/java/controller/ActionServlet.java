@@ -84,6 +84,9 @@ public class ActionServlet extends HttpServlet {
                 new ConsultationSerialisation().appliquer(req, res);
                 break;
             }
+            case "getConsultationCourante": {
+                
+            }
         }
     }
 
