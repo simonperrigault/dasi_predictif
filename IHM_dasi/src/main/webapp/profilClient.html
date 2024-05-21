@@ -1,77 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes informations personnelles</title>
-    <link rel="stylesheet" href="style/profilClient.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts/profilClient.js"></script>
-</head>
-<body>
-    <header>
-        <div class="containerTop">
-            <a class ="imgA" href="index.html"> <img style="width:70%;"src="img/mini_log.png" alt="Predict'IF Logo"></a> 
-            <div class="blocBouton">
-                <a class="bouton"  href="login.html"> <bouton href="statsEmploye.html" class="btn">Mes Consultations</bouton></a>
-                <a class="bouton"  href="login.html"> <bouton href="#" class="btn">Prendre un rdv</bouton></a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mes informations personnelles</title>
+        <link rel="stylesheet" href="style/profilClient.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="scripts/profilClient.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="containerTop">
+                <a class ="imgA" href="index.html"> <img style="width:70%;"src="img/mini_log.png" alt="Predict'IF Logo"></a> 
+                <div class="blocBouton">
+                    <a class="bouton"  href="login.html"> <bouton href="statsEmploye.html" class="btn">Mes Consultations</bouton></a>
+                    <a class="bouton"  href="login.html"> <bouton href="#" class="btn">Prendre un rdv</bouton></a>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
 
         <main>
-        <section class="profile">
-            <h1>Mon profil Astral</h1>
-            <div class="container2">
-                <div class="info">
-                    <p><strong>Signe Zodiaque: </strong> <span id = "zodiaque">Vierge</span></p>
-                    <p><strong>Signe Astrologique Chinois: </strong> <span id = "chinois">Loup</span></p>
-                    <p><strong>Couleur Porte Bonheur: </strong> <span id = "couleur">Rouge</span></p>
-                    <p><strong>Animal Totem: </strong><span id = "animal">Chien</span> </p>
+            <section class="profile">
+                <h1>Mon profil Astral</h1>
+                <div class="container2">
+                    <div class="info">
+                        <p><strong>Signe Zodiaque: </strong> <span id = "zodiaque"></span></p>
+                        <p><strong>Signe Astrologique Chinois: </strong> <span id = "chinois"></span></p>
+                        <p><strong>Couleur Porte Bonheur: </strong> <span id = "couleur"></span></p>
+                        <p><strong>Animal Totem: </strong><span id = "animal"></span> </p>
+                    </div>
                 </div>
-            <h1>Mes informations personnelles</h1>
-            <div class="container">
-                
-                <form action="#" class="info">
-                    <div class="form-group">
-                        <label for="nom">Nom:</label>
-                        <input type="text" id="nom" name="nom" placeholder="Nom" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="prenom">Prénom:</label>
-                        <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="motdepasse">Mot de passe:</label>
-                        <input type="password" id="motdepasse" name="motdepasse" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telephone">Téléphone:</label>
-                        <input type="tel" id="telephone" name="telephone" placeholder="tel">
-                    </div>
-                    <div class="form-group">
-                        <label for="genre">Genre:</label>
-                        <select id="genre" name="genre">
-                            <option value="">Ne souhaite pas répondre</option>
-                            <option value="homme">Homme</option>
-                            <option value="femme">Femme</option>
-                        </select>
-                    </div>
-                    
-                </form>
-            </div>
-            <button type="submit" class="btnEnregistrer">Enregistrer les modifications</button>
-        </section>
-    </main>
+                <h1>Mes informations personnelles</h1>
+                <div class="container">
 
-    <footer>
-        <div class="containerFoot">
-            <p>&copy; 2024 Predict'IF</p>
-        </div>
-    </footer>
-</body>
+                    <form action="#" class="info">
+                        <div class="form-group">
+                            <label for="nom">Nom:</label>
+                            <input type="text" id="nom" name="nom" placeholder="Nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="prenom">Prénom:</label>
+                            <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="motdepasse">Mot de passe:</label>
+                            <input type="password" id="motdepasse" name="motdepasse" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone:</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="tel">
+                        </div>
+                        <div class="form-group">
+                            <label for="genre">Genre:</label>
+                            <select id="genre" name="genre">
+                                <option value="">Ne souhaite pas répondre</option>
+                                <option value="homme">Homme</option>
+                                <option value="femme">Femme</option>
+                            </select>
+                        </div>
+
+                    </form>
+                </div>
+                <button type="submit" class="btnEnregistrer">Enregistrer les modifications</button>
+            </section>
+        </main>
+
+        <footer>
+            <div class="containerFoot">
+                <p>&copy; 2024 Predict'IF</p>
+            </div>
+        </footer>
+    </body>
 </html>

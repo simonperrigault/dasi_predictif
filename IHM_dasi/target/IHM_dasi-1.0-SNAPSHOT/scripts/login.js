@@ -18,7 +18,32 @@ $(document).ready(() => {
         })
                 .done((res) => {
                     console.log(res);
-                    window.location.href = "profilEmploye.html";
+                    if (res.connexion == false) {
+                        $.ajax({
+                            url: './ActionServlet',
+                            method: 'POST',
+                            data: {
+                                todo: 'connecterEmploye',
+                                email: email,
+                                mdp: mdp
+                            },
+                            dataType: 'json'
+                        })
+                        .done((res) => {
+                            console.log(res);
+                            if (res.connexion == false) {
+                                alert("Erreur de connexion");
+                                return;
+                            }
+                            else{
+                                window.location.href = "profilEmploye.html";
+                            }
+                            
+                        })
+                    }
+                    else {
+                        window.location.href = "profilClient.html";
+                    }
                 })
                 .fail((res) => {
                     console.error(res);

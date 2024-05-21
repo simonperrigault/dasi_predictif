@@ -78,6 +78,12 @@ public class ServiceEmploye {
             Cartomancien medium4 = new Cartomancien("Endora", "Mes cartes répondrons à toutes vos questions personnelles", "F");
             Astrologue medium5 = new Astrologue("Ecole Normale Supérieure d'Astrologie (ENS-Astro)", "2006", "Serena", "Basée à Champigny sur Marne, Serena vous révelera votre avenir pour éclairer votre passé", "F");
             Astrologue medium6 = new Astrologue("Insitut des Nouveaux Savoirs Astrologiques", "2010", "Mr.M", "Avenir, Avenir, que nous réserves-tu ? N'attendez plus, demandez à me consulter", "M");
+            medium1.setCheminPhotoProfil("img/medium1.png");
+            medium2.setCheminPhotoProfil("img/medium2.png");
+            medium3.setCheminPhotoProfil("img/medium3.png");
+            medium4.setCheminPhotoProfil("img/medium4.png");
+            medium5.setCheminPhotoProfil("img/medium1.png");
+            medium6.setCheminPhotoProfil("img/medium2.png");
             
             JPAutil.ouvrirTransaction();
             mediumdao.create(medium1);

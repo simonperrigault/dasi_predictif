@@ -1,8 +1,13 @@
 vue\ProfilEmployeSerialisation.class
+modele\GetInfosEmployeAction.class
+modele\GetInfosClientAction.class
+vue\ProfilClientSerialisation.class
 modele\AuthentifierClientAction.class
 modele\Action.class
 modele\AuthentifierEmployeAction.class
-modele\GetInfosClientAction.class
-vue\ProfilClientSerialisation.class
+modele\GetTopMediums.class
+modele\InscrireClientAction.class
+vue\ListeProfilsMediumsSerialisation.class
+vue\ProfilMediumSerialisation.class
 controller\ActionServlet.class
 vue\Serialisation.class

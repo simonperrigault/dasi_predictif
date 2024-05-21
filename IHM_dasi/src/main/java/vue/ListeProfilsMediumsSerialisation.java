@@ -40,6 +40,7 @@ public class ListeProfilsMediumsSerialisation extends Serialisation {
                 jsonMedium.addProperty("presentation", medium.getPresentation());
                 jsonMedium.addProperty("genre", medium.getGenre());
                 jsonMedium.addProperty("nombreChoisi", medium.getNombreChoisi());
+                jsonMedium.addProperty("image", medium.getCheminPhotoProfil());
                 if (medium instanceof Astrologue) {
                     Astrologue astro = (Astrologue) medium;
                     jsonMedium.addProperty("formation", astro.getFormation());
