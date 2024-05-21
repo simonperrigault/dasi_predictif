@@ -21,19 +21,21 @@ $(document).ready(function() {
                 const mediumId = $(this).data('id');
                 const confirmPopup = `
                 <div class="popup">
-                <div class="imgPopUp">
-                    <p>Mr. M</p>
-                    <img src="${element.medium.image}" alt="Medium">
-                </div>
-                <div class="txtPopUp">
                     <p class ="titrePopUp">Confirmer la réservation</p>
-                    <p>${element.medium.presentation} ?</p>
-                    <div class = "containsBoutons" >
-                        <button class="btn btn-primary" id="confirm-btn">Confirmer</button>
-                        <button class="btn btn-secondary" id="cancel-btn">Annuler</button>
+                    <div class ="popUpContent">
+                        <div class="imgPopUp">
+                            <p>Mr. M</p>
+                            <img src="img/${element.medium.image}" alt="Medium">
+                        </div>
+                        <div class="txtPopUp">
+                            <p> ${element.medium.denomination} ?</p>
+                            <div class = "containsBoutons" >
+                                <button class="btn-primary" id="confirm-btn">Confirmer</button>
+                                <button class="btn-secondary" id="cancel-btn">Annuler</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
                 `;
                 $('body').css('background-color', 'rgb(137, 137, 137)');
 
