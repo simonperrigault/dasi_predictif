@@ -14,7 +14,7 @@ $(document).ready(function() {
                     <button class="btn btn-primary" data-id="${medium.id}">Choisir</button>
                 </div>
             `);
-            $('#mediums').append(mediumElement);
+            $('#listeMedium').append(mediumElement);
 
             // Add event listener to the button
             mediumElement.find('button').on('click', function() {
