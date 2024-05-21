@@ -21,5 +21,5 @@ public abstract class Action {
         this.serviceClient = client;
         this.serviceEmploye = emplo;
     }
-    public abstract void execute(HttpServletRequest request);
+    public abstract void execute(HttpServletRequest req);
 }

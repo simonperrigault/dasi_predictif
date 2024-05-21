@@ -6,6 +6,9 @@
 package modele;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import metier.modele.Consultation;
+import metier.modele.Employe;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
 
@@ -20,8 +23,12 @@ public class GetConsultationCouranteAction extends Action {
     }
 
     @Override
-    public void execute(HttpServletRequest request) {
+    public void execute(HttpServletRequest req) {
+        HttpSession session = req.getSession(true);
         
+        Employe employe = (Employe)session.getAttribute("employe");
+        Consultation consultation = serviceEmploye.obtenirConsultationCourante(employe);
+        req.setAttribute("consultation", consultation);
     }
     
 }
