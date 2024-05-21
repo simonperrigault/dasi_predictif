@@ -21,10 +21,14 @@ import dao.JPAutil;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
 import modele.AuthentifierEmployeAction;
+import modele.GetConsultationCouranteAction;
 import modele.GetInfosClientAction;
 import modele.GetInfosEmployeAction;
 import modele.GetTopMediums;
-import modele.creerConsultationAction;
+import modele.CreerConsultationAction;
+import modele.TerminerConsultationAction;
+import modele.ValiderConsultationAction;
+import vue.BooleanSerialisation;
 import vue.ConsultationSerialisation;
 import vue.ListeProfilsMediumsSerialisation;
 import vue.ProfilEmployeSerialisation;
@@ -80,12 +84,24 @@ public class ActionServlet extends HttpServlet {
                 break;
             }
             case "creerConsultation": {
-                new creerConsultationAction(servClient, servEmploye).execute(req);
+                new CreerConsultationAction(servClient, servEmploye).execute(req);
                 new ConsultationSerialisation().appliquer(req, res);
                 break;
             }
             case "getConsultationCourante": {
-                
+                new GetConsultationCouranteAction(servClient, servEmploye).execute(req);
+                new ConsultationSerialisation().appliquer(req, res);
+                break;
+            }
+            case "validerConsultation": {
+                new ValiderConsultationAction(servClient, servEmploye).execute(req);
+                new BooleanSerialisation().appliquer(req, res);
+                break;
+            }
+            case "terminerConsultation": {
+                new TerminerConsultationAction(servClient, servEmploye).execute(req);
+                new BooleanSerialisation().appliquer(req, res);
+                break;
             }
         }
     }

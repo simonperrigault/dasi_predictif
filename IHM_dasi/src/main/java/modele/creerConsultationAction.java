@@ -21,9 +21,9 @@ import metier.service.ServiceEmploye;
  *
  * @author sperrigaul
  */
-public class creerConsultationAction extends Action {
+public class CreerConsultationAction extends Action {
 
-    public creerConsultationAction(ServiceClient client, ServiceEmploye emplo) {
+    public CreerConsultationAction(ServiceClient client, ServiceEmploye emplo) {
         super(client, emplo);
     }
 

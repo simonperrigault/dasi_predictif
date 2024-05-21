@@ -7,7 +7,7 @@ package modele;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import metier.modele.Client;
+import metier.modele.Consultation;
 import metier.modele.Employe;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
@@ -16,9 +16,9 @@ import metier.service.ServiceEmploye;
  *
  * @author sperrigaul
  */
-public class GetInfosEmployeAction extends Action {
+public class ValiderConsultationAction extends Action {
 
-    public GetInfosEmployeAction(ServiceClient client, ServiceEmploye emplo) {
+    public ValiderConsultationAction(ServiceClient client, ServiceEmploye emplo) {
         super(client, emplo);
     }
 
@@ -27,7 +27,9 @@ public class GetInfosEmployeAction extends Action {
         HttpSession session = req.getSession(true);
         
         Employe employe = (Employe)session.getAttribute("employe");
-        req.setAttribute("employe", employe);
+        Consultation consultation = serviceEmploye.obtenirConsultationCourante(employe);
+        Boolean res = serviceEmploye.validerConsultation(consultation);
+        req.setAttribute("res", res);
     }
-
+    
 }

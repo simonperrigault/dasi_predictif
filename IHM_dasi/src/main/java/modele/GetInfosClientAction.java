@@ -25,7 +25,7 @@ public class GetInfosClientAction extends Action {
     public void execute(HttpServletRequest req) {
         HttpSession session = req.getSession(true);
         
-        Client client = this.serviceClient.rechercherClientbyID((Long)session.getAttribute("clientId"));
+        Client client = (Client)session.getAttribute("client");
         req.setAttribute("client", client);
     }
 

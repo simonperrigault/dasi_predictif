@@ -7,7 +7,7 @@ package modele;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import metier.modele.Client;
+import metier.modele.Consultation;
 import metier.modele.Employe;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
@@ -16,9 +16,9 @@ import metier.service.ServiceEmploye;
  *
  * @author sperrigaul
  */
-public class GetInfosEmployeAction extends Action {
+public class TerminerConsultationAction extends Action {
 
-    public GetInfosEmployeAction(ServiceClient client, ServiceEmploye emplo) {
+    public TerminerConsultationAction(ServiceClient client, ServiceEmploye emplo) {
         super(client, emplo);
     }
 
@@ -27,7 +27,10 @@ public class GetInfosEmployeAction extends Action {
         HttpSession session = req.getSession(true);
         
         Employe employe = (Employe)session.getAttribute("employe");
-        req.setAttribute("employe", employe);
+        Consultation consultation = serviceEmploye.obtenirConsultationCourante(employe);
+        String commentaire = req.getParameter("commentaire");
+        Boolean res = serviceEmploye.terminerConsultation(consultation, commentaire);
+        req.setAttribute("res", res);
     }
-
+    
 }
