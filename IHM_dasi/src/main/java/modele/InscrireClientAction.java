@@ -5,6 +5,12 @@
  */
 package modele;
 
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import metier.modele.Client;
@@ -23,13 +29,15 @@ public class InscrireClientAction extends Action {
 
     @Override
     public void execute(HttpServletRequest req) {
-//        Client client = ;
-//        Boolean reussi = this.serviceClient.inscrireClient(client);
-//        req.setAttribute("client", client);
-//        HttpSession session = req.getSession(true);
-//        if (client != null) {
-//            session.setAttribute("clientId", client.getId());
-//        }
+        System.out.println(req.getParameter("date"));
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = format.parse((String)req.getParameter("date"));
+            Client client = new Client(req.getParameter("nom"), req.getParameter("prenom"), req.getParameter("email"), req.getParameter("mdp"), req.getParameter("adresse"), req.getParameter("tel"), date);
+            Boolean reussi = this.serviceClient.inscrireClient(client);
+            req.setAttribute("client", client);
+        } catch (Exception ex) {
+        }
     }
 
 }

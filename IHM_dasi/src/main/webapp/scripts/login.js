@@ -37,7 +37,7 @@ $(document).ready(() => {
                                 return;
                             }
                             else{
-                                window.location.href = "profilEmploye.html";
+                                window.location.href = "accueilEmploye.html";
                             }
                             
                         })

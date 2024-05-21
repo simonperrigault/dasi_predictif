@@ -29,6 +29,7 @@ import modele.GetTopMediums;
 import modele.CreerConsultationAction;
 import modele.GetConsultationsMediumsAction;
 import modele.GetRepartitionAction;
+import modele.InscrireClientAction;
 import modele.TerminerConsultationAction;
 import modele.ValiderConsultationAction;
 import vue.BooleanSerialisation;
@@ -67,6 +68,11 @@ public class ActionServlet extends HttpServlet {
             case "connecterEmploye": {
                 new AuthentifierEmployeAction(servClient, servEmploye).execute(req);
                 new ProfilEmployeSerialisation().appliquer(req, res);
+                break;
+            }
+            case "inscrireClient": {
+                new InscrireClientAction(servClient, servEmploye).execute(req);
+                new ProfilClientSerialisation().appliquer(req, res);
                 break;
             }
             case "getInfosClient": {

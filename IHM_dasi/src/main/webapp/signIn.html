@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes informations personnelles</title>
     <link rel="stylesheet" href="style/signIn.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/signIn.js"></script>
 </head>
 <body>
     <header>
         <div class="containerTop">
-            <a class ="imgA" href="index.html"> <img style="width:70%;"src="img/mini_log.png" alt="Predict'IF Logo"></a> 
+            <a class ="imgA" href="index.html"> <img style="width:70%;" src="img/mini_log.png" alt="Predict'IF Logo"></a> 
             <div class="blocBouton">
-                <a class="bouton"  href="login.html"> <bouton href="#" class="btn">Se connecter</bouton> </a>
+                <a class="bouton"  href="login.html"> <button class="btn">Se connecter</button> </a>
             </div>
         </div>
     </header>
@@ -42,11 +44,15 @@
                     </div>
                     <div class="form-group">
                         <label for="motdepasse">Confirmation:</label>
-                        <input type="password" id="Confirmation" name="confirmation" required>
+                        <input type="password" id="confirmation" name="confirmation" required>
                     </div>
                     <div class="form-group">
                         <label for="telephone">Téléphone:</label>
                         <input type="tel" id="telephone" name="telephone" placeholder="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="adresse">Adresse:</label>
+                        <input type="text" id="adresse" name="adresse" placeholder="adresse">
                     </div>
                     <div class="form-group">
                         <label for="genre">Genre:</label>
@@ -60,11 +66,10 @@
                         <label for="dateNaissance">Date de naissance:</label>
                         <input type="date" id="dateNaissance" name="dateNaissance" required>
                     </div>
-                    
+                    <input type="submit" class="btnEnregistrer" />
                     
                 </form>
             </div>
-            <button type="submit" class="btnEnregistrer">S'inscrire</button>
         </section>
     </main>
 
