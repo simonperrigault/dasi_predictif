@@ -1,7 +1,7 @@
 /* Global styles */
 :root {
     --main-color:  rgb(240,241,235);
-    --popup-color:  rgb(188, 189, 186);
+    --popup-color:  rgb(228, 232, 219);
     --bouton-color:  rgb(127,129,230);
     --bouton-color-hover:  rgb(100, 102, 233);
     --taille-label : 10vw;
@@ -160,14 +160,26 @@
     }
 
     .popup{
+        border-radius: 5px;
+        padding: 50px;
+        border: solid 2px var(--bouton-color);
+        background-color: var( --popup-color); 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        height: 20%;        
+    }
+
+    .popUpContent{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        border: solid 2px var(--bouton-color);
+        
         align-items: center;
-        border-radius: 5px;
-        padding: 10px;
-        background-color: var( --popup-color); 
+  
+        
     }
 
     .medium:hover{
@@ -321,4 +333,33 @@
       background-color: var(--main-color);
       padding: 20px 0;
       text-align: center;
+    }
+
+
+    .btnConf{
+      background-color: rgb(104, 228, 85);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .btnConf:hover{
+      background-color: rgb(85, 228, 104);
+    }
+
+    .btnCan{
+      background-color: rgb(225, 68, 68);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .btnCan:hover{
+      background-color: rgb(228, 85, 85);
     }
