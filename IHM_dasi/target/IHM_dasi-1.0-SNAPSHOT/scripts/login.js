@@ -2,8 +2,9 @@
 var API_URL = 'http://localhost:8080/IHM_dasi/ActionServlet';
 
 $(document).ready(() => {
-    $("#boutonConnexion").on("click", () => {
+    $("form").on("submit", (event) => {
         // Get the email and password from the form using jQuery
+        event.preventDefault();
         const email = $('#email').val();
         const mdp = $('#mdp').val();
         $.ajax({

@@ -27,7 +27,7 @@ public class AuthentifierEmployeAction extends Action {
         req.setAttribute("employe", employe);
         HttpSession session = req.getSession(true);
         if (employe != null) {
-            session.setAttribute("employeId", employe.getId());
+            session.setAttribute("employe", employe);
         }
     }
     
