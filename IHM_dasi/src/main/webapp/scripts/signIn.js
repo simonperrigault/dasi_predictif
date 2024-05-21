@@ -23,7 +23,12 @@ $(document).ready(() => {
             data: data,
             success: function (data) {
                 console.log('Form submitted successfully:', data);
-                alert("Vous avez bien été inscrit");
+                if (data.connexion) {
+                    alert("Vous avez bien été inscrit");
+                }
+                else {
+                    alert("Erreur lors de l'inscription");
+                }
                 
             },
             error: function (xhr, status, error) {

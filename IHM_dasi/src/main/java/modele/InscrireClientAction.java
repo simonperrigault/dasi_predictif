@@ -35,6 +35,9 @@ public class InscrireClientAction extends Action {
             Date date = format.parse((String)req.getParameter("date"));
             Client client = new Client(req.getParameter("nom"), req.getParameter("prenom"), req.getParameter("email"), req.getParameter("mdp"), req.getParameter("adresse"), req.getParameter("tel"), date);
             Boolean reussi = this.serviceClient.inscrireClient(client);
+            if (reussi == false) {
+               client = null; 
+            }
             req.setAttribute("client", client);
         } catch (Exception ex) {
         }
