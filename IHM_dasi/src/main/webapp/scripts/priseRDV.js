@@ -20,13 +20,22 @@ $(document).ready(function() {
             mediumElement.find('button').on('click', function() {
                 const mediumId = $(this).data('id');
                 const confirmPopup = `
-                    <div class="popup">
-                        <h2>Confirmer la réservation</h2>
-                        <p>Voulez-vous réellement réserver un rendez-vous avec ${element.medium.denomination} ?</p>
+                <div class="popup">
+                <div class="imgPopUp">
+                    <p>Mr. M</p>
+                    <img src="img/${element.medium.image}" alt="Medium">
+                </div>
+                <div class="txtPopUp">
+                    <p class ="titrePopUp">Confirmer la réservation</p>
+                    <p>${element.medium.presentation} ?</p>
+                    <div class = "containsBoutons" >
                         <button class="btn btn-primary" id="confirm-btn">Confirmer</button>
                         <button class="btn btn-secondary" id="cancel-btn">Annuler</button>
                     </div>
+                </div>
+            </div>
                 `;
+                $('body').css('background-color', 'rgb(137, 137, 137)');
 
                 // Create a custom modal popup
                 const popupContainer = $('<div class="modal-popup"></div>');

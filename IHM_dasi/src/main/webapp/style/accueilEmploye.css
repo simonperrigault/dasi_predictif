@@ -1,6 +1,7 @@
 /* Global styles */
 :root {
     --main-color:  rgb(240,241,235);
+    --main-color-sous-popup:  rgb(137, 137, 137);
     --bouton-color:  rgb(127,129,230);
     --bouton-color-hover:  rgb(100, 102, 233);
     --taille-label : 10vw;

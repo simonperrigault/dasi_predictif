@@ -14,7 +14,7 @@
     <header>
         <div class="containerTop">
             <a  class ="imgA" href="index.html"> <img style="width:70%;"src="img/mini_log.png" alt="Predict'IF Logo"></a> 
-            <div class="blocbutton">
+            <div class="blocBouton">
                 <a class="button"  href=""><button class="btn">Mes consultations</button></a>
                 <a class="button"><button href="profilEmploye.html" class="btn">Mon profil</button></a>
             </div>
@@ -25,6 +25,21 @@
         <section class="profile">
             <h1>Predict'IF</h1>
             <div id = "listeMedium">
+
+                <div class="popup">
+                    <div class="imgPopUp">
+                        <p>Mr. M</p>
+                        <img src="img/${element.medium.image}" alt="Medium">
+                    </div>
+                    <div class="txtPopUp">
+                        <p class ="titrePopUp">Confirmer la réservation</p>
+                        <p>Voulez-vous réellement réserver un rendez-vous avec ${element.medium.denomination} ?</p>
+                        <div class = "containsBoutons" >
+                            <button class="btn btn-primary" id="confirm-btn">Confirmer</button>
+                            <button class="btn btn-secondary" id="cancel-btn">Annuler</button>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             
