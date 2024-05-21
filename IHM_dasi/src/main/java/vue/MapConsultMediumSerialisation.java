@@ -15,27 +15,27 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import metier.modele.Employe;
+import metier.modele.Medium;
 
 /**
  *
  * @author sperrigaul
  */
-public class MapRepartitionSerialisation extends Serialisation {
+public class MapConsultMediumSerialisation extends Serialisation {
 
     @Override
     public void appliquer(HttpServletRequest req, HttpServletResponse res) {
         Gson gson = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
         JsonArray resultat = new JsonArray();
 
-        Map<Employe, Double> mapRepartition = (Map<Employe, Double>) req.getAttribute("mapRepartition");
+        Map<Medium, Integer> mapRepartition = (Map<Medium, Integer>) req.getAttribute("mapConsultMedium");
 
-        for (Map.Entry<Employe, Double> entry : mapRepartition.entrySet()) {            
-            Employe employe = entry.getKey();
+        for (Map.Entry<Medium, Integer> entry : mapRepartition.entrySet()) {            
+            Medium medium = entry.getKey();
             
             JsonArray intermediaire = new JsonArray();
             
-            intermediaire.add(employe.getNom());
-            intermediaire.add(employe.getPrenom());
+            intermediaire.add(medium.getDenomination());
             intermediaire.add(entry.getValue());
             
             resultat.add(intermediaire);

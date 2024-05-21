@@ -27,12 +27,16 @@ import modele.GetInfosClientAction;
 import modele.GetInfosEmployeAction;
 import modele.GetTopMediums;
 import modele.CreerConsultationAction;
+import modele.GetConsultationsMediumsAction;
+import modele.GetRepartitionAction;
 import modele.TerminerConsultationAction;
 import modele.ValiderConsultationAction;
 import vue.BooleanSerialisation;
 import vue.ConsultationSerialisation;
 import vue.ListeProfilsMediumsSerialisation;
 import vue.MapAideSerialisation;
+import vue.MapConsultMediumSerialisation;
+import vue.MapRepartitionSerialisation;
 import vue.ProfilEmployeSerialisation;
 
 /**
@@ -108,6 +112,16 @@ public class ActionServlet extends HttpServlet {
             case "avoirAide": {
                 new AvoirAideAction(servClient, servEmploye).execute(req);
                 new MapAideSerialisation().appliquer(req, res);
+                break;
+            }
+            case "getRepartitionEmployeClient": {
+                new GetRepartitionAction(servClient, servEmploye).execute(req);
+                new MapRepartitionSerialisation().appliquer(req, res);
+                break;
+            }
+            case "getConsultMedium": {
+                new GetConsultationsMediumsAction(servClient, servEmploye).execute(req);
+                new MapConsultMediumSerialisation().appliquer(req, res);
                 break;
             }
         }
