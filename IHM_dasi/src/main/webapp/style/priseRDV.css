@@ -139,15 +139,16 @@
         justify-content: space-evenly;
         align-items: center;
         margin-top: 20px;
-        background-color: var( --popup-color); 
+      
         margin: 10px;
         padding: 5px;
     }
     
     .imgPopUp{
+      width: 30%;
        display: flex;
     flex-direction: column;
-    margin-right: 20px;
+
     }
 
     .titrePopUp{
@@ -161,22 +162,27 @@
 
     .popup{
         border-radius: 5px;
-        padding: 50px;
+        padding: 20px;
         border: solid 2px var(--bouton-color);
         background-color: var( --popup-color); 
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 80%;
-        height: 20%;        
+        width: 80%;        
+    }
+
+    .nomMedium{
+      margin : auto;
     }
 
     .popUpContent{
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        margin: auto;
         
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
         align-items: center;
   
         
@@ -290,6 +296,11 @@
     
     .input{
       padding-top: 10px;
+    }
+
+    .trueImgPopUp{
+      border-radius: 50%;
+      
     }
 
     .sousTitre{

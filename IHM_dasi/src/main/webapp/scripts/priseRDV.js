@@ -24,16 +24,16 @@ $(document).ready(function() {
                     <p class ="titrePopUp">Confirmer la réservation</p>
                     <div class ="popUpContent">
                         <div class="imgPopUp">
-                            <p>Mr. M</p>
-                            <img src="img/${element.medium.image}" alt="Medium">
+                            <p class = "nomMedium">Mr. M</p>
+                            <img src="${element.medium.image}" alt="Medium">
                         </div>
                         <div class="txtPopUp">
-                            <p> ${element.medium.denomination} ?</p>
-                            <div class = "containsBoutons" >
-                                <button class="btn-primary" id="confirm-btn">Confirmer</button>
-                                <button class="btn-secondary" id="cancel-btn">Annuler</button>
-                            </div>
+                            <p  >${element.medium.denomination}</p>
                         </div>
+                    </div>
+                    <div class = "containsBoutons" >
+                        <button class="btnCan" id="cancel-btn">Annuler</button>
+                        <button class="btnConf" id="confirm-btn">Confirmer</button>
                     </div>
                 </div>
                 `;
