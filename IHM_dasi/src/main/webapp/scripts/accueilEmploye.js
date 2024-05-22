@@ -41,20 +41,13 @@ $(document).ready(() => {
                         $("#boutonValider").remove();
                         $("#appelEnCours").append("<button id='boutonTerminer'>Terminer la consultation</button>");
                         $("#appelEnCours").append("<button id='boutonAide'>Avoir de l'aide</button>");
-                        $("#sectionPopup").hide();
-                        $("#sectionPopup").html("");
-                        let contentPopup = 
-                                `
-                                <h2>Laisser un commentaire</h2>
-                                <form action="#" id="formCommentaire">
-                                    <textarea id="commentaire" name="commentaire"></textarea>
-                                    <input type="submit" />
-                                </form>
-                                `;
-                        $("#sectionPopup").append(contentPopup);
+
                         
                         $("#boutonTerminer").on("click", () => {
-                            $("#sectionPopup").show();
+                            $("#popupCommentaire").modal("show");
+                        });
+                        $("#buttonQuitterCommentaire").on("click", () => {
+                            $("#popupCommentaire").modal("hide");
                         });
                         
                         $("#formCommentaire").on("submit", (event) => {
