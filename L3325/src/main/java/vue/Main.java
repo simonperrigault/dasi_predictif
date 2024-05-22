@@ -161,8 +161,8 @@ public class Main {
 //        System.out.println("-------------------------------------------------------\n");
 //        //Thread.sleep(4000);
 //        
-//        //Professeur Tran
-//        choixClientMedium = serviceClt.rechercherMediumbyID(6L);
+        //Professeur Tran
+//        Medium choixClientMedium = serviceClt.rechercherMediumbyID(6L);
 //        Consultation nouvelleConsultation4 = serviceClt.demanderConsultation(choixClientMedium, client3);
 //       
 //        if (nouvelleConsultation4 != null)
@@ -175,14 +175,6 @@ public class Main {
 //        
 //        System.out.println("-------------------------------------------------------\n");
 //        //Thread.sleep(4000);
-//        
-//        serviceEmp.validerConsultation(nouvelleConsultation2);
-//        Thread.sleep(2000);
-//        serviceEmp.terminerConsultation(nouvelleConsultation2, "Merci pour cette consultation !");
-//        
-//        serviceEmp.validerConsultation(nouvelleConsultation4);
-//        Thread.sleep(2000);
-//        serviceEmp.terminerConsultation(nouvelleConsultation4, "Merci pour cette consultation !");
 //        
 //        //On refait une consultation pour le Professeur Tran
 //        

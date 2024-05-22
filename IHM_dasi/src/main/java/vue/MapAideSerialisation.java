@@ -33,6 +33,8 @@ public class MapAideSerialisation extends Serialisation {
         else {
             resultat.addProperty("res", true);
             for (Map.Entry<String, String> entry : mapAide.entrySet()) {
+                System.out.println(entry.getKey());
+                System.out.println(entry.getValue());
                 resultat.addProperty(entry.getKey(), entry.getValue());
             }
         }
