@@ -46,8 +46,15 @@ $(document).ready(() => {
                         $("#boutonTerminer").on("click", () => {
                             $("#popupCommentaire").modal("show");
                         });
-                        $("#buttonQuitterCommentaire").on("click", () => {
+                        $("#boutonQuitterCommentaire").on("click", () => {
                             $("#popupCommentaire").modal("hide");
+                        });
+                        
+                        $("#boutonAide").on("click", () => {
+                            $("#popupAide").modal("show");
+                        });
+                        $("#boutonQuitterAide").on("click", () => {
+                            $("#popupAide").modal("hide");
                         });
                         
                         $("#formCommentaire").on("submit", (event) => {
@@ -66,6 +73,33 @@ $(document).ready(() => {
                                 else {
                                     console.log("Commentaire enregistré");
                                     location.reload();
+                                }
+                            }).fail((res) => {
+                                console.log("Erreur");
+                                console.log(res);
+                            });
+                        });
+                        
+                        $("#formAide").on("submit", (event) => {
+                            event.preventDefault();
+                            $.ajax({
+                                url: './ActionServlet?todo=avoirAide',
+                                method: 'POST',
+                                data: {
+                                    amour: $("#amour").val(),
+                                    sante: $("#sante").val(),
+                                    travail: $("#travail").val()
+                                },
+                                dataType: 'json'
+                            }).done((res) => {
+                                if (res.res === false) {
+                                    console.log("Erreur lors de l'aide");
+                                }
+                                else {
+                                    console.log("Aide reçue");
+                                    $("#paraAmour").html(`Amour : ${res.amour}`);
+                                    $("#paraSante").html(`Santé : ${res.santé}`);
+                                    $("#paraTravail").html(`Travail : ${res.travail}`);
                                 }
                             }).fail((res) => {
                                 console.log("Erreur");
