@@ -38,6 +38,8 @@ public class MapRepartitionSerialisation extends Serialisation {
             intermediaire.add(employe.getPrenom());
             intermediaire.add(entry.getValue());
             
+           
+            
             resultat.add(intermediaire);
         }
 

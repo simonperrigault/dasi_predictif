@@ -61,6 +61,19 @@ public class Client implements Serializable {
         
     }
 
+    public Client(String nom, String prenom, String mail, String motDePasse, String adressePostale, String numTel) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.mail = mail;
+        this.motDePasse = motDePasse;
+        this.adressePostale = adressePostale;
+        this.numTel = numTel;
+    }
+
+
+
+
+
     
 
     //getters 

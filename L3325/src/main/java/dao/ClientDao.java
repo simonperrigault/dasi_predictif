@@ -24,7 +24,18 @@ public class ClientDao {
     }
 
     public Client update(Client client) {
-        return JPAutil.obtenirContextePersistance().merge(client);
+        Client existingClient = JPAutil.obtenirContextePersistance().find(Client.class, client.getId());
+        if (existingClient != null) {
+            existingClient.setNom(client.getNom());
+            existingClient.setPrenom(client.getPrenom());
+            // ... set other values ...
+            JPAutil.obtenirContextePersistance().merge(existingClient);
+        } else {
+            // client doesn't exist in the database, so you need to insert it
+            JPAutil.obtenirContextePersistance().persist(client);
+        }
+        
+        return client;
     }
 
     public Client findById(Long id) {
