@@ -22,5 +22,41 @@ $(document).ready(function() {
 
     })
 
-    // Ajoutez votre code ici
+    $('#enregistrer').click(function() {
+        console.log("debut")
+    
+        var nom = $('#nom').val();
+        var prenom = $('#prenom').val();
+        var mdp = $('#motdepasse').val();
+        var mail = $('#email').val();
+        var adresse = $('#adresse').val();
+        var telephone = $('#telephone').val();
+    
+        console.log("envoi de la modif")
+        data = {
+            todo : "setInfosClient",
+            nom : $('#nom').val(),
+            prenom : $('#prenom').val(),
+            email : $('#email').val(),
+            mdp : $('#motdepasse').val(),
+            tel : $('#telephone').val(),
+            adresse: $("#adresse").val(),
+        }
+        console.log(data);
+        $.ajax({
+            url: './ActionServlet',
+            method: 'POST',
+            data: data,
+            dataType: 'json'
+        })
+        .done((res) => {
+            console.log(res);
+            // Traitement de la réponse de l'API
+        })
+        .fail((xhr, status, error) => {
+            console.log(error);
+            // Traitement d'erreur
+        });
+    });
 });
+

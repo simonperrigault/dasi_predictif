@@ -37,6 +37,29 @@
         width: 4%;
         height: 4%;
       }
+
+      .popup{
+        border-radius: 5px;
+        padding: 20px;
+        border: solid 2px var(--bouton-color);
+        background-color: var( --popup-color); 
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;    
+        background-color: #fff;    
+    }
+
+    .titrePopUp{
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-top: 2em;
+      text-align: center;
+      width: 60%;
+      margin: auto;
+      
+  }
   
     .containerTop{
       margin: 0 auto;

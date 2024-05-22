@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistiques géographiques</title>
     <link rel="stylesheet" href="style/statsEmploye.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhf3JleYpal9S-xouJYH8lf7Dvz5Y2Nko&callback=initMap"></script>
+    <script src="scripts/statsEmploye.js"></script>
 </head>
 <body>
     <header>
@@ -13,7 +17,7 @@
             <h1>Statistiques géographiques</h1>
             <div class="blocBouton">
                     
-                <a class="bouton"  href="login.html"><bouton href="profilEmploye.html" class="btn">Mon profil</bouton></a>
+                <a class="bouton"  href="profilEmploye.html"><button class="btn">Mon profil</button></a>
             </div>
         </div>
     </header>
@@ -22,10 +26,12 @@
         <section class="profile">
             
             <div class="container">
-                <img class="pin" src="img/red_pin.png" alt="Pin" onclick="pinclicked">
-                <img class ="france"src="img/france.svg" alt="Map" >
+                <div id="map" style="height: 600px; width: 620px; margin: 0 auto;"></div>
+
                 
-                <a href="#" class="btn">Afficher les statistiques</a>
+                
+                
+                <a href="#" id = "btnStats" class="btn">Afficher les statistiques</a>
             </div>
         </section>
     </main>
