@@ -26,7 +26,7 @@ public class ModifierClientAction extends Action {
     public void execute(HttpServletRequest req) {
      
         HttpSession session = req.getSession(true);
-        Client client = (Client)session.getAttribute("client");
+        Client client = (Client)serviceClient.rechercherClientbyID((Long)session.getAttribute("clientId"));
         System.out.println(client);
         client.setNom(req.getParameter("nom"));
         client.setPrenom(req.getParameter("prenom"));

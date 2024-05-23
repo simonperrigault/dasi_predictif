@@ -20,9 +20,9 @@ import metier.service.ServiceEmploye;
  *
  * @author sperrigaul
  */
-public class GetConsultationsMediumsAction extends Action {
+public class GetConsultationsParMediumsAction extends Action {
 
-    public GetConsultationsMediumsAction(ServiceClient client, ServiceEmploye emplo) {
+    public GetConsultationsParMediumsAction(ServiceClient client, ServiceEmploye emplo) {
         super(client, emplo);
     }
 

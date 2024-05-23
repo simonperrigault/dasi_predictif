@@ -26,7 +26,7 @@ public class ValiderConsultationAction extends Action {
     public void execute(HttpServletRequest req) {
         HttpSession session = req.getSession(true);
         
-        Employe employe = (Employe)session.getAttribute("employe");
+        Employe employe = serviceEmploye.rechercherEmployebyID((Long)session.getAttribute("employeId"));
         Consultation consultation = serviceEmploye.obtenirConsultationCourante(employe);
         Boolean res = serviceEmploye.validerConsultation(consultation);
         req.setAttribute("res", res);

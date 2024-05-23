@@ -360,6 +360,10 @@ public class ServiceEmploye {
         JPAutil.fermerContextePersistance();
         return result;
     }
+     
+     public List<Consultation> getAllConsultationsEmploye(Employe employe) {
+         return employe.getConsultations();
+     }
     
     
      

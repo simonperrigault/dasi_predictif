@@ -26,7 +26,7 @@ public class GetInfosEmployeAction extends Action {
     public void execute(HttpServletRequest req) {
         HttpSession session = req.getSession(true);
         
-        Employe employe = (Employe)session.getAttribute("employe");
+        Employe employe = serviceEmploye.rechercherEmployebyID((Long)session.getAttribute("employeId"));
         req.setAttribute("employe", employe);
     }
 

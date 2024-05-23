@@ -27,7 +27,7 @@ public class AuthentifierClientAction extends Action {
         req.setAttribute("client", client);
         HttpSession session = req.getSession(true);
         if (client != null) {
-            session.setAttribute("client", client);
+            session.setAttribute("clientId", client.getId());
         }
     }
 

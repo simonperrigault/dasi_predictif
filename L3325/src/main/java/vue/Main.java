@@ -288,10 +288,9 @@ public class Main {
         //L'employé cherche maintenant à afficher les statistiques
         System.out.println("L'employé cherche maintenant à afficher les statistiques\n");
         
-        EmployeDao emp = new EmployeDao();
         Long id = new Long(1);
         System.out.println("cbin");
-        Employe employeTemp = emp.findById(id);
+        Employe employeTemp = serviceEmp.rechercherEmployebyID(id);
         
         //Employe fakeEmp = new Employe()
 

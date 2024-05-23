@@ -32,7 +32,7 @@ public class CreerConsultationAction extends Action {
         HttpSession session = req.getSession(true);
         System.out.println(req.getParameter("mediumId"));
         Medium medium = this.serviceClient.rechercherMediumbyID(Long.parseLong(req.getParameter("mediumId")));
-        Client client = (Client) session.getAttribute("client");
+        Client client = (Client)serviceClient.rechercherClientbyID((Long)session.getAttribute("clientId"));
         Consultation consultation;
         System.out.println(medium);
         System.out.println(client);

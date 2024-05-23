@@ -1,4 +1,5 @@
 $(document).ready(() => {
+        
     $.ajax({
         url: './ActionServlet?todo=getConsultationCourante',
         method: 'GET',

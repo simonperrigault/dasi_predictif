@@ -6,14 +6,14 @@
 package modele;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import metier.modele.Client;
 import metier.modele.Consultation;
 import metier.modele.Employe;
+import metier.modele.Medium;
 import metier.service.ServiceClient;
 import metier.service.ServiceEmploye;
 
@@ -21,29 +21,24 @@ import metier.service.ServiceEmploye;
  *
  * @author sperrigaul
  */
-public class AvoirAideAction extends Action {
+public class GetConsultationsEmployeAction extends Action {
 
-    public AvoirAideAction(ServiceClient client, ServiceEmploye emplo) {
+    public GetConsultationsEmployeAction(ServiceClient client, ServiceEmploye emplo) {
         super(client, emplo);
     }
 
     @Override
     public void execute(HttpServletRequest req) {
+        
         HttpSession session = req.getSession(true);
         
         Employe employe = serviceEmploye.rechercherEmployebyID((Long)session.getAttribute("employeId"));
-        Consultation consultation = serviceEmploye.obtenirConsultationCourante(employe);
-        Client client = consultation.getClient();
-        int amour = Integer.parseInt(req.getParameter("amour"));
-        int sante = Integer.parseInt(req.getParameter("sante"));
-        int travail = Integer.parseInt(req.getParameter("travail"));
-        Map<String, String> mapAide = null;
-        try {
-            mapAide = serviceEmploye.avoirAide(amour, sante, travail, client);
-        } catch (IOException ex) {
-            
-        }
-        req.setAttribute("mapAide", mapAide);
+        List<Consultation> listeConsultations = employe.getConsultations();
+        System.out.println(employe);
+        System.out.println(serviceEmploye.rechercherEmployebyID(employe.getId()));
+        System.out.println(listeConsultations);
+
+        req.setAttribute("listeConsultations", listeConsultations);
     }
     
 }

@@ -26,7 +26,7 @@ public class GetConsultationCouranteAction extends Action {
     public void execute(HttpServletRequest req) {
         HttpSession session = req.getSession(true);
         
-        Employe employe = (Employe)session.getAttribute("employe");
+        Employe employe = serviceEmploye.rechercherEmployebyID((Long)session.getAttribute("employeId"));
         Consultation consultation = serviceEmploye.obtenirConsultationCourante(employe);
         req.setAttribute("consultation", consultation);
     }
