@@ -66,7 +66,7 @@ public class ConsultationDao {
     public List<Consultation> findAll() {
         List<Consultation> clients;
         
-        String s = "select c from Consultation c order by c.nom asc";
+        String s = "select c from Consultation c order by c.id asc";
         TypedQuery query = JPAutil.obtenirContextePersistance().createQuery(s, Consultation.class);
         
         try

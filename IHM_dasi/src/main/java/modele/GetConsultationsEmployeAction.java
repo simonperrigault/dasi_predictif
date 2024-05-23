@@ -37,6 +37,8 @@ public class GetConsultationsEmployeAction extends Action {
         System.out.println(employe);
         System.out.println(serviceEmploye.rechercherEmployebyID(employe.getId()));
         System.out.println(listeConsultations);
+            
+          //List<Consultation> listeConsultations = serviceEmploye.getAllConsultation();
 
         req.setAttribute("listeConsultations", listeConsultations);
     }

@@ -1,35 +1,48 @@
 
 $(document).ready(() => {
     $.ajax({
-        url: './ActionServlet?todo=getConsultMedium',
+        url: './ActionServlet?todo=getAllConsul',
         method: 'GET',
         dataType: 'json'
     })
     .done((res) => {
+        console.log("pos GPS");
         console.log(res);
 
             // Petite popup Google Maps
         var infowindow = makeInfoWindow('');
+        // console.log("client : "+res[0].client.id);
+        // console.log(JSON.stringify(res.client, null, 2));
+        // console.log("lat : "+res.client.latitude+" long : "+res.client.longitude);
+        // var newpos = {lat : res.client.latitude, lng : res.client.longitude};
+        // console.log("new pose: " + newpos);
+
 
         var position = {lat: 46.527840,  lng: 2.416970};
+        var titre = "";
 
         for (var i = 0; i < 2; i++) {
 
             
-            if (i % 2 === 0) {
-                // image pour marker personnalisé
-                
-            }
+            position = {lat : res[i].client.latitude, lng: res[i].client.longitude};
+            titre = res[i].client.nom;
 
             var marker = new google.maps.Marker({
                 map: googleMapInstance,
-                position: {lat: position.lat + (Math.random() - 0.5) / 10.0, lng: position.lng + 2 * (Math.random() - 0.5) / 10.0},
-                title: 'Endroit #' + i
+                position: {lat: position.lat, lng: position.lng },
+                title: titre
             });
 
             attachInfoWindow(
                     marker, infowindow,
-                    '<div><strong><a href="./endroit.html?' + i + '">Endroit #' + i + '</a></strong><br/>Ceci est l\'endroit charmant numéro ' + i + '<br/>' + 'Incroyable !' + '</div>'
+                    '<div style = "display:flex; flex-direction: row; "> <div class = "infos">'+
+                    '<p>Client : '+res[i].client.nom+' </p>'+
+                    '<p>Employé : '+res[i].employe.nom+' '+res[i].employe.prenom+' </p>'+
+                    '<p>Date : '+res[i].consultation.date+' </p>'+
+                    '<p>Durée : '+res[i].consultation.duree+' </p>'+
+                   
+                    ' </div>   <div class = "commentaire" style = " margin-left : 3px;padding : 5px;border: solid 2px black;">Commentaire <br/>'+res[i].consultation.commentaire+'  </div> </div>'
+                    //<strong><a href="./endroit.html?' + i + '">Endroit #' + i + '</a></strong><br/>Ceci est l\'endroit charmant numéro ' + i + '<br/>' + 'Incroyable !' + '
                     );
         }
         
@@ -44,13 +57,23 @@ $(document).ready(() => {
             method: 'GET',
             dataType: 'json'
         })
-        .done((res) => {
-            console.log(res);
+        .done((res1) => {
+            $.ajax(
+                {
+                    url: './ActionServlet?todo=getRepartitionEmployeClient',
+                    method: 'GET',
+                    dataType: 'json'
+                }
+            ).done((res2)=> {
+                console.log(res1);
+                console.log(res2);
             const confirmPopup = `
                 <div class="popup">
                     <p class ="titrePopUp">Graphiques</p>
-                    <div id="container-1" class="highcharts-container"></div>
-                    <div id="container-2" class="highcharts-container"></div>
+                    <div style = "display:flex; flex-direction:row;">
+                        <div style = "width: 50%;"  id="container-1" class="highcharts-container"></div>
+                        <div style = "width: 50%;"  id="container-2" class="highcharts-container"></div>
+                    </div>
                     <button id="closeBtn" class="btn">Fermer</button>
                 </div>
                 
@@ -59,46 +82,30 @@ $(document).ready(() => {
                 const popupContainer = $('<div class="modal-popup"></div>');
                 popupContainer.html(confirmPopup);
                 $('body').append(popupContainer);
-                const data = res; // votre tableau de tableau reçu
+                const data1 = res1; // votre tableau de tableau reçu
+                const data2 = res2; // votre tableau de tableau reçu
 
-                const formattedData = data.map(([name, y]) => ({ name, y }));
-                var finalList; 
+                const formattedData1 = data1.map(([name, y]) => ({ name, y }));
+                const formattedData2 = data2.map(([name,client, y]) => ({ name, y }));
                 
-                console.log(formattedData);
+                console.log(formattedData1);
+                console.log(formattedData2);
                 console.log("printed");
-                var oldProportionChartData = {
+               
+
+                var proportionChartData1 = {
                     label: 'RDV',
-                    data: [
-                        {
-                            name: 'Lucie',
-                            y: 20
-                        },
-                        {
-                            name: 'Marcel',
-                            y: 5
-                        },
-                        {
-                            name: 'Noémie',
-                            y: 7
-                        },
-                        {
-                            name: 'Oscar',
-                            y: 13
-                        }]
+                    data: formattedData1
                 };
 
-                var proportionChartData = {
+                var proportionChartData2 = {
                     label: 'RDV',
-                    data: formattedData
+                    data: formattedData2
                 };
 
-                console.log("avant")
-                console.log(oldProportionChartData);
-                console.log("après")
-                console.log(proportionChartData);
 
 
-                function buildPieChart(container, graphData) {
+                function buildPieChart(container, graphData, text) {
 
                     Highcharts.chart(container, {
                 
@@ -106,7 +113,7 @@ $(document).ready(() => {
                             type: 'pie'
                         },
                         title: {
-                            text: 'Répartition des médiums sélectionnés'
+                            text: text
                         },
                         subtitle: {
                             text: ''
@@ -118,7 +125,8 @@ $(document).ready(() => {
                     });
                 }
 
-                buildPieChart('container-2', proportionChartData);
+                buildPieChart('container-2', proportionChartData1,"Répartition des médiums sélectionnés");
+                buildPieChart('container-1', proportionChartData2, "Répartition des appels employées");
 
                 $("#closeBtn").on("click",()=> {
                     popupContainer.remove();
@@ -132,9 +140,16 @@ $(document).ready(() => {
 
 
         }).fail((res) => {
-            console.log("Erreur");
-            console.loge(res);
+            console.log("Erreur2");
+            console.loge(res2);
         });
+
+
+            }).fail((res) => {
+                console.log("Erreur1");
+                console.loge(res1);
+            });
+            
 
     
     
@@ -203,64 +218,6 @@ function initMap() {
 
     var infowindow = makeInfoWindow('');
 
-    // var marker = new google.maps.Marker({
-    //     map: googleMapInstance,
-    //     position: {lat: 45.782122, lng: 4.872735},
-    //     title: "Département IF, INSA de Lyon"
-    
-    // });
-
-    // marker.addListener('click', function () {
-
-    //     infowindow.setContent('<div>Information: ' + marker.title + '</div>');
-    //     infowindow.open(googleMapInstance, marker);
-    // });
-
-    // var marker2 = new google.maps.Marker({
-    //     map: googleMapInstance,
-    //     position: {lat: 45.782592, lng: 4.878238},
-    //     title: "Entrée principale, INSA de Lyon"
-        
-    // });
-
-    // marker2.addListener('click', function () {
-
-    //     infowindow.setContent('<div>Information: ' + marker2.title + '</div>');
-    //     infowindow.open(googleMapInstance, marker2);
-    // });
-
-    // // Simuler un appel AJAX (attente 5s)
-    // setTimeout(
-    //         generateMarkers,
-    //         5000
-    //         );
+   
 }
 
-function generateMarkers() {
-
-    // Petite popup Google Maps
-    var infowindow = makeInfoWindow('');
-
-    var position = {lat: 46.527840,  lng: 2.416970};
-
-    for (var i = 0; i < 2; i++) {
-
-        
-        if (i % 2 === 0) {
-            // image pour marker personnalisé
-            
-        }
-
-        var marker = new google.maps.Marker({
-            map: googleMapInstance,
-            position: {lat: position.lat + (Math.random() - 0.5) / 10.0, lng: position.lng + 2 * (Math.random() - 0.5) / 10.0},
-            title: 'Endroit #' + i
-        });
-
-        attachInfoWindow(
-                marker, infowindow,
-                '<div><strong><a href="./endroit.html?' + i + '">Endroit #' + i + '</a></strong><br/>Ceci est l\'endroit charmant numéro ' + i + '<br/>' + 'Incroyable !' + '</div>'
-                );
-    }
-
-}

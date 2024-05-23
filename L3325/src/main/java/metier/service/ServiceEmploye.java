@@ -301,6 +301,22 @@ public class ServiceEmploye {
                       
     }
     
+    public List<Consultation> getAllConsultation()
+    {
+        
+        ConsultationDao consultationdao = new ConsultationDao();
+        List<Consultation> consultations;
+        JPAutil.creerContextePersistance();
+       
+        consultations = consultationdao.findAll();
+        
+        JPAutil.fermerContextePersistance();
+        
+        return consultations;
+        
+                      
+    }
+    
     public Map<Medium, Integer> nombreConsultMediums()
     {
         MediumDao mediumdao = new MediumDao();

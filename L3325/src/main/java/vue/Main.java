@@ -334,6 +334,8 @@ public class Main {
         
         System.out.println("-------------------------------------------------------\n");
         
+        System.out.println("cons : "+serviceEmp.getAllConsultation());
+        
         JPAutil.fermerFabriquePersistance(); // fermeture de la fabrique de persistence
         
     }

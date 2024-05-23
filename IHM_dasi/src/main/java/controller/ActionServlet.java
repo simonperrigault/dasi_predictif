@@ -23,6 +23,7 @@ import modele.GetInfosClientAction;
 import modele.GetInfosEmployeAction;
 import modele.GetTopMediums;
 import modele.CreerConsultationAction;
+import modele.GetAllConsultationsAction;
 import modele.GetConsultationsEmployeAction;
 import modele.GetConsultationsParMediumsAction;
 import modele.GetRepartitionAction;
@@ -135,11 +136,21 @@ public class ActionServlet extends HttpServlet {
                 new MapConsultMediumSerialisation().appliquer(req, res);
                 break;
             }
+            case "getAllConsul" :{
+                new GetAllConsultationsAction(servClient,servEmploye).execute(req);
+                System.out.println("ça passe");
+                new ListeConsultationsSerialisation().appliquer(req, res);
+                System.out.println("ça passe pas");
+                break;            
+            }
             case "getConsultEmploye": {
                 new GetConsultationsEmployeAction(servClient, servEmploye).execute(req);
+                
                 new ListeConsultationsSerialisation().appliquer(req, res);
+                
                 break;
             }
+            
         }
     }
 
