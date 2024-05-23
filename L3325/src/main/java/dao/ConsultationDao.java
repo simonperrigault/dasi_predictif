@@ -80,4 +80,20 @@ public class ConsultationDao {
         return clients;
 
     }
+    
+    public List<Consultation> findConsultationByEmploye(Employe employe) {
+    List<Consultation> consultations;
+    
+    String s = "select c from Consultation c where c.employe = :employe";
+    TypedQuery<Consultation> query = JPAutil.obtenirContextePersistance().createQuery(s, Consultation.class);
+    query.setParameter("employe", employe);
+    
+    try {
+        consultations = query.getResultList();
+    } catch (NoResultException e) {
+        consultations = null;
+    }
+    
+    return consultations;
+}
 }

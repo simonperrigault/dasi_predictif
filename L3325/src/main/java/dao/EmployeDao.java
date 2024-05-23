@@ -34,7 +34,12 @@ public class EmployeDao {
             employe = JPAutil.obtenirContextePersistance().find(Employe.class, id);
             
         } catch (NoResultException e) {
+            System.out.println("bug dao");
             employe = null;
+        }
+        if (employe == null)
+        {
+            System.out.println("employe null");
         }
         return employe;
     }

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package vue;
+import dao.EmployeDao;
 import dao.JPAutil;
 import java.io.IOException;
 import java.text.ParseException;
@@ -64,7 +65,7 @@ public class Main {
         serviceClt.inscrireClient(client2);
         serviceClt.inscrireClient(client3);
         
-        client3.setNom("Louis");
+        //client3.setNom("Louis");
         //serviceClt.modifierClient(client3);
         
         System.out.println("-------------------------------------------------------\n");
@@ -287,9 +288,18 @@ public class Main {
         //L'employé cherche maintenant à afficher les statistiques
         System.out.println("L'employé cherche maintenant à afficher les statistiques\n");
         
+        EmployeDao emp = new EmployeDao();
+        Long id = new Long(1);
+        System.out.println("cbin");
+        Employe employeTemp = emp.findById(id);
+        
+        //Employe fakeEmp = new Employe()
 
+        List<Consultation> cons = serviceEmp.getConsultationByEmploye(employeTemp);
         
-        
+       for (Consultation consultation : cons) {
+            System.out.println("Consultation : " + consultation.getClient() + ", Date de début : " + consultation.getEmploye());
+        }
         
         //L'employé cherche à afficher le Top5 des Médiums
         System.out.println("L'employé cherche à afficher le Top5 des Médiums\n");

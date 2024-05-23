@@ -282,9 +282,23 @@ public class ServiceEmploye {
             double division = (double) employe.getNombreConsult() / nombreConsultationTotal;
             dictionnaire.put(employe, (double)Math.round(division * 100));
         }
-        
+        JPAutil.fermerContextePersistance();
         return dictionnaire;
        
+    }
+    
+    public List<Consultation> getConsultationByEmploye(Employe employe)
+    {
+        EmployeDao employedao = new EmployeDao();
+        ConsultationDao consultationdao = new ConsultationDao();
+        JPAutil.creerContextePersistance();
+        Employe trueEmploye = employedao.findById(employe.getId());
+        List<Consultation> consultations = consultationdao.findConsultationByEmploye(trueEmploye);
+        JPAutil.fermerContextePersistance();
+        
+        return consultations;
+        
+                      
     }
     
     public Map<Medium, Integer> nombreConsultMediums()
@@ -299,7 +313,7 @@ public class ServiceEmploye {
         for (Medium medium : listeMedium) {
             dictionnaire.put(medium, medium.getNombreChoisi());
         }
-        
+        JPAutil.fermerContextePersistance();
         return dictionnaire;
        
     }

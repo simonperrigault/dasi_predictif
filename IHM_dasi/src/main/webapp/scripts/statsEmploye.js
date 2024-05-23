@@ -1,14 +1,42 @@
 
 $(document).ready(() => {
     $.ajax({
-        url: './ActionServlet?todo=getRepartitionEmployeClient',
+        url: './ActionServlet?todo=getConsultMedium',
         method: 'GET',
         dataType: 'json'
     })
     .done((res) => {
         console.log(res);
+
+            // Petite popup Google Maps
+        var infowindow = makeInfoWindow('');
+
+        var position = {lat: 46.527840,  lng: 2.416970};
+
+        for (var i = 0; i < 2; i++) {
+
+            
+            if (i % 2 === 0) {
+                // image pour marker personnalisé
+                
+            }
+
+            var marker = new google.maps.Marker({
+                map: googleMapInstance,
+                position: {lat: position.lat + (Math.random() - 0.5) / 10.0, lng: position.lng + 2 * (Math.random() - 0.5) / 10.0},
+                title: 'Endroit #' + i
+            });
+
+            attachInfoWindow(
+                    marker, infowindow,
+                    '<div><strong><a href="./endroit.html?' + i + '">Endroit #' + i + '</a></strong><br/>Ceci est l\'endroit charmant numéro ' + i + '<br/>' + 'Incroyable !' + '</div>'
+                    );
+        }
         
     });
+
+    
+
 
     $("#btnStats").on("click", () => {
         $.ajax({
@@ -17,12 +45,13 @@ $(document).ready(() => {
             dataType: 'json'
         })
         .done((res) => {
-            console.log(res)
+            console.log(res);
             const confirmPopup = `
                 <div class="popup">
                     <p class ="titrePopUp">Graphiques</p>
                     <div id="container-1" class="highcharts-container"></div>
                     <div id="container-2" class="highcharts-container"></div>
+                    <button id="closeBtn" class="btn">Fermer</button>
                 </div>
                 
                 `;
@@ -90,6 +119,16 @@ $(document).ready(() => {
                 }
 
                 buildPieChart('container-2', proportionChartData);
+
+                $("#closeBtn").on("click",()=> {
+                    popupContainer.remove();
+                });
+                // $("#closeBtn2").on("click",()=> {
+                //     popupContainer.empty();
+                // });
+                // $("#closeBtn3").on("click",()=> {
+                //     popupContainer.detach();
+                // });
 
 
         }).fail((res) => {
