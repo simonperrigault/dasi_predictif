@@ -23,6 +23,7 @@ import modele.GetInfosClientAction;
 import modele.GetInfosEmployeAction;
 import modele.GetTopMediums;
 import modele.CreerConsultationAction;
+import modele.DeconnexionAction;
 import modele.GetAllConsultationsAction;
 import modele.GetConsultationsEmployeAction;
 import modele.GetConsultationsParMediumsAction;
@@ -138,9 +139,7 @@ public class ActionServlet extends HttpServlet {
             }
             case "getAllConsul" :{
                 new GetAllConsultationsAction(servClient,servEmploye).execute(req);
-                System.out.println("ça passe");
                 new ListeConsultationsSerialisation().appliquer(req, res);
-                System.out.println("ça passe pas");
                 break;            
             }
             case "getConsultEmploye": {
@@ -149,6 +148,12 @@ public class ActionServlet extends HttpServlet {
                 new ListeConsultationsSerialisation().appliquer(req, res);
                 
                 break;
+            }
+            
+            case "deconnexion" : {
+                new DeconnexionAction(servClient, servEmploye).execute(req);
+                new BooleanSerialisation().appliquer(req, res);
+                
             }
             
         }

@@ -24,6 +24,30 @@
   
       
     }
+    .user{
+      width: 15%;
+    }
+  
+    p#nomClient{
+      display: block;
+      margin-right: auto;
+      /* width: 15%; */
+      margin-bottom: 0%;
+    }
+
+    .imgUser{
+      width: 80%;
+      display: block;
+      margin: auto;
+    }
+
+    .avis{
+      width: 35%;
+    }
+
+    .comm{
+      
+    }
 
     #nom{
         font-size: 0.8em;
