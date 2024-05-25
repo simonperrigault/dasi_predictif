@@ -30,6 +30,7 @@ import modele.GetConsultationsParMediumsAction;
 import modele.GetRepartitionAction;
 import modele.InscrireClientAction;
 import modele.ModifierClientAction;
+import modele.ModifierEmployeAction;
 import modele.TerminerConsultationAction;
 import modele.ValiderConsultationAction;
 import vue.BooleanSerialisation;
@@ -85,6 +86,12 @@ public class ActionServlet extends HttpServlet {
                 //System.out.println("update : "+req);
                 new ModifierClientAction(servClient, servEmploye).execute(req);
                 new ProfilClientSerialisation().appliquer(req, res);
+                break;
+            }
+            case "setInfosEmploye": {
+                //System.out.println("update : "+req);
+                new ModifierEmployeAction(servClient, servEmploye).execute(req);
+                new ProfilEmployeSerialisation().appliquer(req, res);
                 break;
             }
             case "getInfosEmploye": {

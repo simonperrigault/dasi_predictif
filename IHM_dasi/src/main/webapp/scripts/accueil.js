@@ -28,7 +28,7 @@ $(document).ready(function() {
             dataType: 'json'
         })
         .done((res2) => {
-            console.log("je suis apres");
+            console.log(res2);
             var i = 0;
             for (let element of res2) {
                 if (i >= 2)
@@ -43,12 +43,12 @@ $(document).ready(function() {
                 </div>
                 <div class="comm">
                     
-                    <img style = "display: block; margin-right: auto;" src="etoiles.jpg" alt="etoiles" id = "etoiles">
-                    <p id="commentaire">Voici l'avis du client enfait l'af</p>
+                    <img style = "display: block; width : 75%; margin-right: auto;" src="img/etoiles.png" alt="etoiles" id = "etoiles">
+                    <p id="commentaire">${res2[i].consultation.commentaire}</p>
                 </div>
             </div>
                 `);
-                $('#containerMedium').append(avisElement);
+                $('#containerAvis').append(avisElement);
                 i++;
             }
         })

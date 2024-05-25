@@ -127,6 +127,39 @@ public class ServiceEmploye {
       
     */
     
+    public boolean modifierEmploye(Employe employe) throws IOException {
+        
+        EmployeDao employedao = new EmployeDao();
+        String msg = null;
+        boolean etat = true; 
+        
+       try{
+           
+           JPAutil.creerContextePersistance();
+           JPAutil.ouvrirTransaction();
+           
+           employedao.update(employe);
+         
+           JPAutil.validerTransaction(); // essayer de valider la transaction
+           msg = "Modification du profil effectuée";
+           
+       }
+       catch(Exception ex){
+           ex.printStackTrace();
+            
+            msg = "Echec de la modification du profil employe";
+         
+            etat = false;
+       }
+       finally { // dans tous les cas, on ferme l'entity manager
+            
+            JPAutil.fermerContextePersistance();
+            System.out.println(msg);
+        }
+        return etat;
+        
+    }
+    
     public boolean validerConsultation(Consultation consultation) 
     {
         JPAutil.creerContextePersistance(); 

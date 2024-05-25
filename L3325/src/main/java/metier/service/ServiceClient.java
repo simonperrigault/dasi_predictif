@@ -188,18 +188,18 @@ public class ServiceClient {
     }
      
     public boolean modifierClient(Client client) throws IOException {
-        System.out.println("bien la");
+        
         ClientDao clientdao = new ClientDao();
         String msg = null;
         boolean etat = true; 
         
        try{
-           System.out.println("bien la2");
+           
            JPAutil.creerContextePersistance();
            JPAutil.ouvrirTransaction();
-           System.out.println("bien la2.5");
+           
            clientdao.update(client);
-           System.out.println("bien la2.6");
+         
            JPAutil.validerTransaction(); // essayer de valider la transaction
            System.out.println("bien la2.7");
            msg = "Modification du profil effectuée";
@@ -213,7 +213,7 @@ public class ServiceClient {
             etat = false;
        }
        finally { // dans tous les cas, on ferme l'entity manager
-            System.out.println("bien la3");
+            
             JPAutil.fermerContextePersistance();
             System.out.println(msg);
         }
