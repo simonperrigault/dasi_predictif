@@ -7,6 +7,7 @@ package metier.modele;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,6 +27,7 @@ public class Employe implements Serializable {
     private Long id;
     private String nom;
     private String prenom;
+    @Column(unique = true)
     private String mail;
     private String motDePasse;
     private String telephone;

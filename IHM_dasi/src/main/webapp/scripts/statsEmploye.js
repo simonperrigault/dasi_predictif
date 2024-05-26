@@ -21,7 +21,7 @@ $(document).ready(() => {
         var position = {lat: 46.527840,  lng: 2.416970};
         var titre = "";
 
-        for (var i = 0; i < 2; i++) {
+        for (var i = 0; i < res.length; i++) {
 
             
             position = {lat : res[i].client.latitude, lng: res[i].client.longitude};
@@ -36,12 +36,12 @@ $(document).ready(() => {
             attachInfoWindow(
                     marker, infowindow,
                     '<div style = "display:flex; flex-direction: row; "> <div class = "infos">'+
-                    '<p>Client : '+res[i].client.nom+' </p>'+
+                    '<p>Client : '+res[i].client.nom+' '+res[i].client.prenom+' </p>'+
                     '<p>Employé : '+res[i].employe.nom+' '+res[i].employe.prenom+' </p>'+
                     '<p>Date : '+res[i].consultation.date+' </p>'+
                     '<p>Durée : '+res[i].consultation.duree+' </p>'+
                    
-                    ' </div>   <div class = "commentaire" style = " margin-left : 3px;padding : 5px;border: solid 2px black;">Commentaire <br/>'+res[i].consultation.commentaire+'  </div> </div>'
+                    ' </div>   <div class = "commentaire" style = " margin-left : 3px;padding : 5px;border: solid 2px black;">Commentaire :<br/>'+res[i].consultation.commentaire+'  </div> </div>'
                     //<strong><a href="./endroit.html?' + i + '">Endroit #' + i + '</a></strong><br/>Ceci est l\'endroit charmant numéro ' + i + '<br/>' + 'Incroyable !' + '
                     );
         }

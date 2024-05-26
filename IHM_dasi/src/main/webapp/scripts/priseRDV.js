@@ -37,7 +37,7 @@ $(document).ready(function() {
                     </div>
                 </div>
                 `;
-                $('body').css('background-color', 'rgb(137, 137, 137)');
+                //$('body').css('background-color', 'rgb(137, 137, 137)');
 
                 // Create a custom modal popup
                 const popupContainer = $('<div class="modal-popup"></div>');
