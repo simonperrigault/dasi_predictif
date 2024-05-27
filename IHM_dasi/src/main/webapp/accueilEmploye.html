@@ -23,19 +23,24 @@
         </header>
 
         <main>
-            <section id="appelEnCours">
+            <section id="appelEnCours" class="appelEnCours">
                 Aucune consultation en cours
+            <div id = "hider" class = 'hiderPopUp'></div>
+            <script> $('#hider').modal("hide");</script>
+                
             </section>
             <section id="sectionPopup">
-                <dialog id="popupCommentaire">
+                <dialog id="popupCommentaire" class = "popUpCom">
                     <h2>Laisser un commentaire</h2>
                     <form action="#" id="formCommentaire">
-                        <textarea id="commentaire" name="commentaire"></textarea>
-                        <input type="submit" />
+                        <textarea id="commentaire" placeholder="Votre commentaire" name="commentaire"></textarea>
+                        <input type="submit" class = "btn" />
                     </form>
-                    <button id="boutonQuitterCommentaire">Annuler</button>
+                    <button id="boutonQuitterCommentaire" class = "btn Annuler">Annuler</button>
                 </dialog>
-                <dialog id="popupAide">
+                
+                <dialog id="popupAide" class= "dialogDiv" style="padding-right: 20px;">
+                    <button id="boutonQuitterAide" class = "btn Quitter">X</button>
                     <form action="#" id="formAide">
                         <label for="amour">Amour</label>
                         <input type="range" id="amour" name="amour" min="1" max="4" />
@@ -43,11 +48,11 @@
                         <input type="range" id="sante" name="sante" min="1" max="4" />
                         <label for="travail">Travail</label>
                         <input type="range" id="travail" name="travail" min="1" max="4" />
-                        <input type="submit" />
+                        <input class = "btn Soumettre" type="submit" />
                     </form>
-                    <button id="boutonQuitterAide">Quitter</button>
-                    <div>
-                        <h2>Aide :</h2>
+                    
+                    <div class = "aideBox">
+                        <h2 class = "title aide">Aide :</h2>
                         <p id="paraAmour">Amour :</p>
                         <p id="paraSante">Santé :</p>
                         <p id="paraTravail">Travail :</p>

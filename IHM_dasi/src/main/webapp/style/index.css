@@ -39,6 +39,7 @@
       width: 80%;
       display: block;
       margin: auto;
+     
     }
 
     .avis{
@@ -46,7 +47,7 @@
     }
 
     .comm{
-      
+      margin-left: 5px;
     }
 
     #nom{
